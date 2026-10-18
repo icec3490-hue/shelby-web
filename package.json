@@ -1,0 +1,11 @@
+{
+  "name": "shelby-pagar-backend-bridge",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
