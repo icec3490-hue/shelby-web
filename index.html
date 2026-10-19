@@ -245,3 +245,44 @@ html{scroll-padding-top:104px}body{position:relative;background:radial-gradient(
   </script>
 </body>
 </html>
+<script>
+(() => {
+  const hide = selector => document.querySelectorAll(selector).forEach(node => { node.hidden = true; node.setAttribute('aria-hidden', 'true'); });
+  hide('#planos, #loja, #auth-dialog, #checkout-dialog, #selected-player-plan');
+  document.querySelectorAll('.nav-links a[href="#planos"], .nav-links a[href="#loja"], #account-button').forEach(node => node.remove());
+  const form = document.querySelector('#sensi-form');
+  if (!form) return;
+  const cleanForm = form.cloneNode(true);
+  form.replaceWith(cleanForm);
+  cleanForm.querySelector('#device')?.closest('.field')?.remove();
+  cleanForm.querySelector('#style')?.closest('.field')?.remove();
+  cleanForm.querySelector('#experience')?.closest('.field')?.remove();
+  const fields = cleanForm.querySelector('.form-grid');
+  fields.insertAdjacentHTML('afterbegin', '<div class="field full"><label for="free-device">Modelo do celular</label><input id="free-device" type="text" autocomplete="off" placeholder="Ex.: Samsung A15, iPhone 13, Redmi Note 12" required></div><div class="field full"><label for="free-dpi">DPI</label><select id="free-dpi"><option value="yes">Gerar com DPI</option><option value="no">Gerar sem DPI</option></select></div>');
+  const model = cleanForm.querySelector('#free-device');
+  const result = document.querySelector('#result');
+  const grid = document.querySelector('#result-grid');
+  function generate() {
+    const name = model.value.trim();
+    if (name.length < 2) return;
+    let seed = [...name.toLowerCase()].reduce((sum, char) => (sum * 31 + char.charCodeAt(0)) >>> 0, 7);
+    const labels = ['Geral', 'Ponto vermelho', 'Mira 2×', 'Mira 4×', 'AWM', 'Olhadinha', 'Botão de tiro'];
+    const values = labels.map(() => { seed = (seed * 1664525 + 1013904223) >>> 0; return 85 + seed % 116; });
+    const items = labels.map((label, i) => [label, values[i]]);
+    items.push(['DPI', 400 + (seed % 601)]);
+    if (cleanForm.querySelector('#free-dpi').value === 'no') items.pop();
+    grid.innerHTML = items.map(item => '<div class="result-cell"><small>' + item[0] + '</small><b>' + item[1] + '</b></div>').join('');
+    result.querySelector('.result-head').innerHTML = 'Sensibilidade para ' + name.replace(/[&<>"']/g, '') + ' <span>GRÁTIS</span>';
+    result.classList.add('show');
+  }
+  cleanForm.addEventListener('submit', event => { event.preventDefault(); generate(); });
+  model.addEventListener('input', generate);
+  cleanForm.querySelector('#free-dpi').addEventListener('change', generate);
+  document.querySelectorAll('.player-card').forEach(card => {
+    card.querySelector('.player-select')?.remove();
+    const button = document.createElement('button'); button.type = 'button'; button.className = 'player-select'; button.textContent = 'Gerar sensi grátis';
+    button.addEventListener('click', () => { model.value = card.querySelector('h3')?.textContent.trim() || ''; generate(); document.querySelector('#gerador')?.scrollIntoView({behavior:'smooth'}); });
+    card.querySelector('.player-info')?.append(button);
+  });
+})();
+</script>
