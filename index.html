@@ -286,3 +286,11 @@ html{scroll-padding-top:104px}body{position:relative;background:radial-gradient(
   });
 })();
 </script>
+<script>
+(() => {
+  const submit = document.querySelector('#sensi-form button[type="submit"]');
+  if (submit) { submit.disabled = false; submit.textContent = 'Gerar sensibilidade grátis'; }
+  document.querySelector('#sensi-form .result-note')?.remove();
+  document.querySelectorAll('.faq').forEach(section => section.hidden = true);
+})();
+</script>
