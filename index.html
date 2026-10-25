@@ -1,296 +1,551 @@
 <!doctype html>
-<html lang="pt-MZ">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111f">
-  <title>S H E L B Y — Sensi para o teu jogo</title>
-  <style>
-    :root{--bg:#07111f;--panel:#101c2d;--panel2:#16243a;--line:#27374d;--text:#f4f7fc;--muted:#9aabc0;--lime:#65d9f2;--lime2:#38badb;--orange:#e9bd70;--radius:22px;--max:1160px}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 72% -10%,#324022 0,transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ffffff12}.brand{display:flex;gap:10px;align-items:center;font-weight:850;letter-spacing:-.04em;font-size:19px}.brand-mark{width:32px;height:32px;border-radius:10px;background:var(--lime);display:grid;place-items:center;color:#151811;font-size:19px}.nav-links{display:flex;gap:30px;color:#c0c3b9;font-size:14px}.nav-links a:hover{color:var(--lime)}.nav-cta,.btn{border:0;border-radius:12px;background:var(--lime);color:#171a12;font-weight:800;padding:12px 18px;cursor:pointer;transition:.18s transform,.18s background}.nav-cta:hover,.btn:hover{background:#dcff83;transform:translateY(-1px)}.hero{padding:84px 0 62px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:55px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--lime);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 12px var(--lime)}h1{font-size:clamp(48px,6.1vw,76px);line-height:.99;letter-spacing:-.065em;margin:18px 0 22px;max-width:640px}h1 span{color:var(--lime)}.hero-copy{max-width:500px;color:#b2b6aa;font-size:17px}.hero-actions{display:flex;gap:12px;align-items:center;margin-top:28px}.btn{padding:15px 21px}.btn-secondary{border:1px solid #454a40;background:transparent;color:var(--text);border-radius:12px;padding:14px 19px;font-weight:750;cursor:pointer}.btn-secondary:hover{border-color:var(--lime);color:var(--lime)}.trust{display:flex;gap:19px;margin-top:30px;color:#a8ad9e;font-size:12px}.trust span:before{content:'✓';color:var(--lime);font-weight:900;margin-right:7px}.hero-visual{position:relative;min-height:390px;display:grid;place-items:center}.glow{position:absolute;width:300px;height:300px;background:#c9f94b26;filter:blur(70px);border-radius:50%}.phone{z-index:1;width:min(320px,85%);padding:15px;border:1px solid #4a5142;border-radius:29px;background:linear-gradient(145deg,#272c24,#151713);box-shadow:0 35px 100px #0009;transform:rotate(2deg)}.phone-top{display:flex;justify-content:space-between;color:#aeb4a4;font-size:11px;padding:3px 6px 15px}.phone-screen{background:#11130f;border-radius:19px;padding:19px}.phone-brand{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:800}.badge{font-size:9px;padding:4px 7px;color:#16190e;background:var(--lime);border-radius:6px}.phone-sub{font-size:10px;color:#8e9584;margin:5px 0 16px}.mini-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #ffffff12;font-size:11px}.mini-row b{color:var(--lime);font-size:13px}.phone-bottom{margin-top:17px;background:#22271b;border-radius:11px;padding:10px;color:#d5eda4;font-size:10px;text-align:center}.visual-note{position:absolute;z-index:2;right:1%;bottom:25px;background:#242820;border:1px solid #41483a;padding:11px 14px;border-radius:13px;font-size:11px;color:#c4c9b9;box-shadow:0 10px 25px #0005}.visual-note strong{color:var(--lime)}.section{padding:66px 0}.section-head{text-align:center;max-width:600px;margin:0 auto 34px}.section-head h2{font-size:clamp(30px,4vw,43px);letter-spacing:-.05em;line-height:1.1;margin:12px 0}.section-head p{margin:0;color:var(--muted)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.step{padding:22px;border:1px solid var(--line);background:linear-gradient(145deg,#1b1e19,#151713);border-radius:18px}.step-num{display:grid;place-items:center;width:33px;height:33px;border-radius:10px;background:#2a3020;color:var(--lime);font-weight:800;font-size:13px}.step h3{font-size:16px;margin:17px 0 6px}.step p{margin:0;color:var(--muted);font-size:13px}.plans{padding-top:76px}.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}.plan{position:relative;border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,#1c1f1a,#151713);padding:24px;display:flex;flex-direction:column}.plan.featured{border-color:#9bc337;box-shadow:0 0 0 1px #a7d34425,0 20px 55px #a1cb2910}.popular{position:absolute;top:-12px;left:50%;transform:translateX(-50%);white-space:nowrap;border-radius:100px;background:var(--lime);color:#151811;padding:5px 12px;font-size:10px;font-weight:900;letter-spacing:.06em}.plan-label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:850;color:#c0c5b7}.plan h3{font-size:28px;letter-spacing:-.04em;margin:6px 0}.price{font-weight:850;font-size:31px;letter-spacing:-.05em;margin:8px 0 2px}.price small{font-size:13px;letter-spacing:0;color:var(--muted);font-weight:500}.plan-desc{font-size:13px;color:var(--muted);min-height:42px;margin:0 0 16px}.features{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:11px;font-size:13px;color:#d5d8ce}.features li:before{content:'✓';color:var(--lime);font-weight:900;margin-right:9px}.plan .btn,.plan .btn-secondary{width:100%;margin-top:auto}.plan .btn-secondary{padding:13px}.small-print{text-align:center;color:#858b7d;font-size:11px;margin:18px 0 0}.generator{padding-top:74px}.generator-box{border:1px solid #42493b;border-radius:24px;background:linear-gradient(135deg,#1d211a,#151713);padding:clamp(22px,4vw,38px);display:grid;grid-template-columns:.9fr 1.1fr;gap:35px}.generator-intro h2{font-size:36px;line-height:1.05;letter-spacing:-.055em;margin:12px 0}.generator-intro p{color:var(--muted);font-size:14px}.tip{margin-top:24px;padding:13px;border-left:2px solid var(--lime);background:#252a1e;border-radius:0 11px 11px 0;color:#cbd0be;font-size:12px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field label{display:block;font-size:12px;color:#c5c9bc;font-weight:700;margin:0 0 7px}.field select,.field input{width:100%;border:1px solid #3a4035;border-radius:11px;background:#11130f;color:var(--text);padding:12px 13px;outline:none}.field select:focus,.field input:focus{border-color:#a9cf50}.field.full{grid-column:1/-1}.generate{width:100%;margin-top:17px}.result{display:none;margin-top:18px;padding:17px;border:1px solid #53633a;background:#20261a;border-radius:14px}.result.show{display:block;animation:appear .25s ease}@keyframes appear{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}.result-head{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:800;margin-bottom:8px}.result-head span{color:var(--lime);font-size:10px;text-transform:uppercase;letter-spacing:.08em}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.result-cell{background:#141710;padding:10px;border-radius:9px}.result-cell small{display:block;color:#969c8a;font-size:10px}.result-cell b{font-size:16px;color:#e3f9b0}.result-note{color:#adb49f;font-size:10px;margin:10px 0 0}.faq{padding-top:76px;padding-bottom:85px}.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{background:#181b17;border:1px solid var(--line);border-radius:14px;padding:16px 18px}.faq summary{cursor:pointer;font-size:13px;font-weight:750;list-style:none}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:'+';float:right;color:var(--lime);font-size:18px;line-height:15px}.faq details[open] summary:after{content:'−'}.faq details p{color:var(--muted);font-size:12px;margin:12px 0 0}.footer{border-top:1px solid #ffffff12;padding:24px 0 32px;color:#8f9587;font-size:11px}.footer-inner{display:flex;justify-content:space-between;gap:18px;align-items:center}.footer strong{color:#dfe4d6}.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#efffc5;color:#1b2111;padding:12px 18px;border-radius:12px;font-weight:750;font-size:13px;box-shadow:0 10px 30px #0008;transition:.22s;z-index:9}.toast.show{opacity:1;transform:translate(-50%,0)}
-    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:10px;padding-top:60px}.hero-visual{min-height:340px}.plans-grid{grid-template-columns:1fr;gap:22px;max-width:500px;margin:auto}.plan-desc{min-height:0}.generator-box{grid-template-columns:1fr;gap:18px}.nav-links{display:none}.steps{gap:10px}.step{padding:17px}}
-    @media(max-width:560px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav{height:65px}.nav-cta{padding:10px 12px;font-size:12px}.brand{font-size:17px}.hero{padding:49px 0 36px}h1{font-size:49px}.hero-copy{font-size:15px}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions button{width:100%}.trust{gap:9px;flex-wrap:wrap}.hero-visual{min-height:310px}.phone{width:270px}.visual-note{right:0;bottom:8px}.section{padding:48px 0}.steps{grid-template-columns:1fr}.section-head{margin-bottom:24px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.result-grid{grid-template-columns:repeat(2,1fr)}.faq-grid{grid-template-columns:1fr}.footer-inner{align-items:flex-start;flex-direction:column}.generator-intro h2{font-size:31px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
-    body:before{content:"S H E L B Y";position:fixed;z-index:-1;left:50%;top:50%;transform:translate(-50%,-50%) rotate(-28deg);font-size:clamp(58px,13vw,170px);font-weight:950;letter-spacing:.18em;white-space:nowrap;color:#ffffff08;pointer-events:none;user-select:none}
-    .brand-mark{background:linear-gradient(145deg,#d8f99b,#94bf4b);border-radius:9px;box-shadow:0 5px 18px #c9f36a25}.brand-word{letter-spacing:.2em;font-size:15px;font-weight:900}.hero{position:relative}.hero:after{content:"S H E L B Y";position:absolute;right:0;top:25px;color:#ffffff10;font-size:11px;letter-spacing:.35em;font-weight:800}.generator-box{background:linear-gradient(135deg,#1a2028,#11151c);border-color:#353d49}.field select,.field input{background:#10141a;border-color:#343c48}.result{background:#1c2418}
-    .community{padding-top:50px}.player-grid,.shop-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.player-card,.product-card{border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#1b2028,#13171e);padding:20px;display:flex;align-items:center;gap:15px;min-width:0;transition:transform .2s,border-color .2s}.player-card:hover,.product-card:hover{transform:translateY(-3px);border-color:#8da94d}.player-avatar{width:68px;height:68px;border-radius:50%;object-fit:cover;border:2px solid var(--lime);flex:none}.player-info{min-width:0}.player-info h3{margin:0 0 2px;font-size:16px}.player-info p{margin:0;color:var(--muted);font-size:12px}.profile-link{color:var(--lime);font-size:12px;font-weight:750;display:inline-block;margin-top:8px}.shop{padding-top:28px}.product-card{display:flex;flex-direction:column;align-items:flex-start;padding:24px;min-height:245px}.product-icon{width:43px;height:43px;border-radius:13px;background:#29331d;color:var(--lime);display:grid;place-items:center;font-size:21px}.product-card h3{margin:2px 0 0;font-size:18px;line-height:1.25}.product-card p{margin:0;color:var(--muted);font-size:13px}.product-bottom{width:100%;margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px}.product-price{font-size:22px;font-weight:850;white-space:nowrap}.product-price small{font-size:11px;color:var(--muted);font-weight:500}.product-link{border-radius:10px;background:var(--lime);color:#161a10;padding:10px 13px;font-weight:800;font-size:12px}.product-note{text-align:center;color:#959d8b;font-size:11px;margin:16px 0 0}.result-grid{grid-template-columns:repeat(4,1fr)}
-    .community .section-head{margin-bottom:30px}.player-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.player-card{position:relative;overflow:hidden;flex-direction:column;align-items:stretch;gap:0;padding:0;background:linear-gradient(160deg,#1b2028,#12161c);border-color:#2a313b;border-radius:18px}.player-card:hover{transform:translateY(-4px);border-color:#8da94d;box-shadow:0 16px 38px #0005}.player-avatar{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;border:0;border-radius:0;margin:0;background:#202630}.player-info{width:100%;padding:16px 17px 18px}.player-info h3{font-size:15px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.player-info p{color:#919baa;font-size:12px}.profile-link{display:flex;align-items:center;justify-content:center;margin-top:13px;padding:10px;border:1px solid #3d4934;border-radius:10px;background:#20271a;font-size:11px}.profile-link:hover{background:var(--lime);color:#161a10}.community{background:radial-gradient(ellipse at 50% 0,#c9f36a0a,transparent 60%)}
-    @media(max-width:1000px){.player-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-    @media(max-width:800px){.player-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.player-card{padding:0}.player-info{padding:13px}.player-info h3{font-size:14px}.profile-link{padding:9px 5px}.shop-grid{grid-template-columns:1fr;max-width:560px;margin:auto}.product-card{min-height:220px}}
-    @media(max-width:360px){.player-grid{grid-template-columns:1fr;max-width:300px;margin:auto}}
-    body:before{content:none}.nav{position:sticky;top:0;z-index:20;background:#07111fe8;backdrop-filter:blur(18px);border-bottom-color:#65d9f21a}.hero{min-height:610px;padding-top:74px;padding-bottom:74px;perspective:1400px}.hero:after{top:34px;color:#65d9f222;font-size:12px}.hero h1{font-size:clamp(54px,6.7vw,86px);max-width:670px}.hero-copy{max-width:540px;color:#b8c7d8;font-size:18px}.hero-visual{perspective:1200px;isolation:isolate}.hero-visual:before{content:"";position:absolute;width:min(430px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 34% 28%,#6fe6ff60,transparent 20%),radial-gradient(circle at 58% 60%,#227ec755,transparent 48%),linear-gradient(145deg,#244f7090,#0d1a2c);border:1px solid #75e8ff50;box-shadow:inset -30px -35px 70px #020916aa,inset 14px 15px 35px #91edff2b,0 45px 110px #0009;transform:rotateX(63deg) rotateZ(-25deg) translateY(53px);z-index:-1}.hero-visual:after{content:"";position:absolute;width:min(470px,95%);aspect-ratio:1;border-radius:50%;border:1px solid #65d9f233;transform:rotateX(63deg) rotateZ(-25deg) translateY(42px);box-shadow:0 0 45px #65d9f219;z-index:-1}.phone{transform:rotateY(-15deg) rotateX(7deg) rotateZ(2deg) translateZ(24px);transform-style:preserve-3d;border-color:#8bdff178;background:linear-gradient(145deg,#203750,#101b2b);box-shadow:24px 35px 0 -14px #06101f,35px 50px 85px #000c, inset 1px 1px #fff3;transition:transform .4s cubic-bezier(.2,.8,.2,1)}.hero-visual:hover .phone{transform:rotateY(-8deg) rotateX(2deg) rotateZ(0) translateZ(50px) translateY(-6px)}.phone-screen{background:linear-gradient(155deg,#0b1727,#0e1c2e)}.phone-bottom{background:#122c43;color:#8eeaff}.glow{background:#35c8f644}.visual-note{background:linear-gradient(145deg,#19344e,#0e1b2a);border-color:#65d9f248;box-shadow:0 16px 40px #0008, inset 0 1px #fff2;color:#c6d7e7}.section{padding-top:82px;padding-bottom:82px}.section-head{margin-bottom:40px}.section-head h2{font-size:clamp(34px,4vw,48px)}.community{padding:82px 28px;border:1px solid #65d9f21a;border-radius:32px;background:linear-gradient(145deg,#0e1c2d,#081421 60%,#0e1c2d);box-shadow:0 35px 80px #0005,inset 0 1px #ffffff0a}.community .section-head{text-align:left;max-width:unset;display:grid;grid-template-columns:auto 1fr;column-gap:22px;align-items:end}.community .section-head .eyebrow{grid-column:1/-1}.community .section-head h2{margin:10px 0 0}.community .section-head p{justify-self:end;text-align:right;max-width:300px}.player-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;perspective:1500px}.player-card{--rx:0deg;--ry:0deg;transform-style:preserve-3d;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transition:transform .18s ease-out,border-color .25s,box-shadow .25s;background:linear-gradient(145deg,#1a3047,#0d1a2a 75%);border-color:#2b4560;border-radius:22px;box-shadow:0 19px 36px #0005,inset 0 1px #ffffff12}.player-card:after{content:"";pointer-events:none;position:absolute;inset:0;border-radius:inherit;background:linear-gradient(130deg,#bff8ff0c,transparent 42%,#65d9f20a);transform:translateZ(1px)}.player-card:hover{transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-7px) translateZ(8px);border-color:#65d9f2;box-shadow:0 30px 60px #0009,0 0 0 1px #65d9f22a,inset 0 1px #ffffff23}.player-avatar{aspect-ratio:1.28/1;transform:translateZ(13px);object-position:center 38%}.player-info{padding:18px 20px 20px;transform:translateZ(18px)}.player-info h3{font-size:17px}.player-info p{font-size:13px}.profile-link{display:none}.player-select{margin-top:14px;padding:13px 12px;background:linear-gradient(135deg,#8ceeff,#38b7db);box-shadow:0 9px 20px #30bddd28;border:1px solid #b2f5ff70;font-size:12px}.community-player{display:none}.player-grid.show-all .community-player{display:flex;animation:cardReveal .35s ease both}@keyframes cardReveal{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}.community-toggle{display:flex;align-items:center;justify-content:center;gap:12px;min-width:230px;margin:27px auto 0;padding:13px 20px;border:1px solid #36536f;border-radius:12px;background:#11243a;color:#d8f8ff;font-weight:750;cursor:pointer;transition:.2s}.community-toggle:hover{border-color:var(--lime);background:#15314a;transform:translateY(-2px)}.shop{padding-top:54px}.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:900px;margin:auto;gap:22px}.product-card{min-height:270px;padding:28px;border-radius:22px;background:linear-gradient(145deg,#162b42,#0d1929);box-shadow:0 20px 45px #0006,inset 0 1px #ffffff12}.product-icon{background:#12334a;border:1px solid #65d9f230}.product-link{background:linear-gradient(135deg,#8ceeff,#38b7db)}.product-note{font-size:12px}.plans-grid{gap:20px}.plan{border-radius:22px;padding:28px;background:linear-gradient(150deg,#142842,#0c1929);box-shadow:0 22px 48px #0007,inset 0 1px #ffffff12}.plan.featured{transform:translateY(-8px) scale(1.02);border-color:#66d9f2;box-shadow:0 30px 70px #0009,0 0 35px #58d8f225,inset 0 1px #fff2}.generator-box{border-radius:30px;padding:clamp(26px,5vw,48px);box-shadow:0 35px 80px #0007,inset 0 1px #ffffff12}.field select,.field input{background:#091729;border-color:#304a65}.tip{color:#c8d8e8}.result-cell{background:#091729}.result-cell b{color:#9eeeff}.faq details{background:#102036;border-color:#263f5a}.footer{border-top-color:#65d9f21a}.footer strong{color:#8eeaff}
-    @media(max-width:1000px){.hero{min-height:0}.player-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-player:last-child{grid-column:1/-1;max-width:calc(50% - 11px);justify-self:center}}
-    @media(max-width:800px){.hero{padding-top:58px;padding-bottom:45px}.hero-visual:before{width:min(360px,88%)}.community{padding:52px 20px;border-radius:26px}.community .section-head{display:block;text-align:center}.community .section-head p{max-width:none;text-align:center;margin-top:8px}.player-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-player:last-child{grid-column:auto;max-width:none}.player-avatar{aspect-ratio:1/1}.plans-grid{gap:18px}.plan.featured{transform:none}.shop-grid{grid-template-columns:1fr;max-width:560px}}
-    @media(max-width:560px){.hero h1{font-size:clamp(47px,13vw,62px)}.hero-copy{font-size:16px}.hero-visual:after{width:min(330px,90%)}.phone{transform:rotateY(-9deg) rotateX(4deg) rotateZ(1deg)}.section{padding-top:58px;padding-bottom:58px}.community{width:calc(100% - 20px);padding:42px 14px;border-radius:22px}.player-grid{gap:11px}.player-card{border-radius:16px}.player-avatar{aspect-ratio:1/1}.player-info{padding:13px 12px 14px}.player-info h3{font-size:13px}.player-info p{font-size:11px}.player-select{font-size:10px;padding:10px 6px;margin-top:11px}.community-toggle{width:100%;min-width:0}.product-card{padding:22px}.generator-box{border-radius:23px}}
-    @media(prefers-reduced-motion:reduce){.player-card,.phone,.community-toggle{transition:none!important;transform:none!important}.player-card:after{display:none}}
-    body{background:radial-gradient(ellipse at 72% -10%,#16466a70 0,transparent 40%),radial-gradient(ellipse at 12% 40%,#10213b55 0,transparent 38%),var(--bg)}.brand-mark,.nav-cta,.btn,.product-link{background:linear-gradient(135deg,#82ebff,#42b9d9);color:#071522;box-shadow:0 8px 24px #48c9e522}.eyebrow,.dot,.trust span:before,.features li:before,.result-head span,.result-cell b{color:var(--lime)}.dot{background:var(--lime);box-shadow:0 0 14px #65d9f288}.popular{background:var(--orange);color:#172030}.price,.product-price{color:#f0cc83}.section-head h2 span,h1 span{color:var(--lime)}.step,.plan,.generator-box,.player-card,.product-card{background:linear-gradient(145deg,#13243a,#0d192a);border-color:#293c54;box-shadow:0 14px 38px #02091670,inset 0 1px #ffffff0a}.plan.featured{border-color:#65d9f2;box-shadow:0 0 0 1px #65d9f222,0 22px 55px #02101d}.player-card{transform:perspective(900px) rotateX(0deg);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}.player-card:hover{transform:perspective(900px) rotateX(2deg) translateY(-5px);border-color:#65d9f2;box-shadow:0 22px 44px #020916aa,inset 0 1px #ffffff14}.community{background:radial-gradient(ellipse at 50% 0,#65d9f20d,transparent 62%)}.profile-link{background:#132842;border-color:#2b4b65;color:#aeeeff}.profile-link:hover{background:var(--lime);color:#081522}.generator-box{background:linear-gradient(135deg,#152841,#0b1727);border-color:#2b4b65}.tip{background:#13263b;border-left-color:var(--orange)}.result{background:#102139;border-color:#365877}.result-cell{background:#0d1a2b}.btn-secondary:hover{border-color:var(--lime);color:var(--lime)}.player-select{width:100%;margin-top:9px;border:0;border-radius:10px;padding:11px 8px;background:linear-gradient(135deg,#82ebff,#42b9d9);color:#071522;font-weight:800;font-size:11px;cursor:pointer;transition:transform .18s,box-shadow .18s}.player-select:hover{transform:translateY(-1px);box-shadow:0 8px 20px #48c9e533}
-    .nav-account{display:flex;align-items:center;gap:8px}.nav-account .nav-cta{white-space:nowrap}.nav-account #account-button{max-width:150px;overflow:hidden;text-overflow:ellipsis}.nav-cta.secondary{background:transparent;border:1px solid #4b5540;color:var(--text)}
-    .app-dialog{width:min(480px,calc(100% - 28px));max-height:min(88vh,760px);overflow:auto;border:1px solid #3b4434;border-radius:22px;background:#141821;color:var(--text);padding:0;box-shadow:0 30px 100px #000b}.app-dialog::backdrop{background:#050709c9;backdrop-filter:blur(5px)}.dialog-inner{padding:24px}.dialog-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:18px}.dialog-head h2{font-size:24px;letter-spacing:-.04em;margin:0}.dialog-head p{color:var(--muted);font-size:13px;margin:6px 0 0}.close-dialog{width:35px;height:35px;border:1px solid #343c48;border-radius:10px;background:#1b202a;color:#fff;font-size:20px;cursor:pointer}.dialog-fields{display:grid;gap:13px}.dialog-fields .field input,.dialog-fields .field select{background:#10141a;border-color:#343c48}.dialog-actions{display:grid;gap:10px;margin-top:18px}.dialog-actions button{width:100%}.dialog-note{color:#aab2a2;font-size:12px;line-height:1.55;margin:14px 0 0}.dialog-status{margin-top:15px;padding:12px 13px;border:1px solid #3d4930;border-radius:12px;background:#20261a;color:#dcebbf;font-size:13px;min-height:44px}.dialog-status:empty{display:none}.dialog-status.error{border-color:#71453e;background:#291b19;color:#ffd3c9}.dialog-status.success{border-color:#536b37;background:#202a18;color:#e4f7c8}.dialog-user{font-size:13px;color:#d8e6bc;background:#20261a;border:1px solid #3d4930;border-radius:12px;padding:12px;overflow-wrap:anywhere}.plan-access{font-weight:800;color:var(--lime)}
-  
-  /* Player profiles: vibrant depth, direct purchase action */
-.community{position:relative;isolation:isolate;overflow:hidden;border-color:#3b79a055;background:radial-gradient(ellipse at 12% 6%,#c039ff22,transparent 34%),radial-gradient(ellipse at 88% 25%,#00e5ff19,transparent 38%),linear-gradient(145deg,#101d34,#091323 66%,#11172c);box-shadow:0 40px 100px #020612aa,inset 0 1px #c8f4ff18}
-.community:before{content:"";position:absolute;z-index:-1;inset:-30%;pointer-events:none;background:conic-gradient(from 120deg at 50% 50%,transparent,#17d8ff0c,transparent,#9d4dff12,transparent);filter:blur(32px);animation:communityAura 18s linear infinite}
-@keyframes communityAura{to{transform:rotate(360deg)}}
-.player-card{background:linear-gradient(145deg,#1c3150,#111c32 62%,#201637);border-color:#6b82a044;box-shadow:0 24px 50px #02061288,inset 0 1px #ffffff18;transition:transform .28s cubic-bezier(.2,.8,.2,1),border-color .25s,box-shadow .25s}
-.player-card:nth-child(3n+1){--accent:#20d8ef}.player-card:nth-child(3n+2){--accent:#a275ff}.player-card:nth-child(3n){--accent:#ff5fa2}
-.player-card:hover{border-color:var(--accent);box-shadow:0 32px 70px #020612bb,0 0 30px color-mix(in srgb,var(--accent) 24%,transparent),inset 0 1px #ffffff2a}
-.player-avatar{filter:saturate(1.12);transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .3s}.player-card:hover .player-avatar{transform:translateZ(24px) scale(1.035);filter:saturate(1.28)}
-.player-info h3{color:#f3f7ff}.player-info p{color:#b7c5dd}
-.player-select{background:linear-gradient(110deg,#19d9ee,#8077ff 55%,#ed58b0);background-size:180% 100%;color:#06111f;box-shadow:0 10px 26px #3eabff2b;font-size:12px;letter-spacing:.01em;transition:background-position .35s,transform .2s,box-shadow .25s}
-.player-select:hover{background-position:100% 0;transform:translateY(-2px) translateZ(8px);box-shadow:0 15px 32px #a250ff44}
-.selected-player-plan{margin:0 auto 20px;max-width:760px;padding:16px 20px;border:1px solid #30d9f977;border-radius:16px;background:linear-gradient(110deg,#10344a,#241b43);color:#e6f7ff;box-shadow:0 16px 40px #0007,0 0 25px #25d9f21a;font-weight:650;text-align:center}
-.plan{transition:transform .28s,border-color .28s,box-shadow .28s}.plan:hover{transform:translateY(-6px);border-color:#9e70ff;box-shadow:0 30px 68px #0009,0 0 28px #a35cff22}
-@media(max-width:560px){.community{background:radial-gradient(ellipse at 10% 5%,#c039ff20,transparent 36%),radial-gradient(ellipse at 95% 30%,#00e5ff18,transparent 38%),linear-gradient(145deg,#101d34,#091323)}.player-select{font-size:10px;min-height:40px}}
-  
-/* Premium plans section */
-.plans{position:relative}.plan-benefits{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:0 auto 28px;max-width:1000px}.plan-benefits article{display:flex;align-items:center;gap:13px;min-width:0;padding:16px;border:1px solid #5da9db2c;border-radius:16px;background:linear-gradient(145deg,#13243acc,#0b1727d9);box-shadow:0 14px 35px #02091655,inset 0 1px #ffffff0b;backdrop-filter:blur(12px)}.plan-benefits article>span,.plan-icon{display:grid;place-items:center;flex:none;width:38px;height:38px;border-radius:12px;background:linear-gradient(145deg,#163d5a,#202044);color:#76e8ff;border:1px solid #4ddcf344;font-size:20px}.plan-benefits b,.plan-benefits small{display:block}.plan-benefits b{font-size:13px;color:#f1f7ff}.plan-benefits small{font-size:11px;color:#9fb0c5;margin-top:2px}.plan-current{display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;max-width:100%;margin:-5px auto 24px;padding:11px 17px;border:1px solid #39d6a577;border-radius:999px;background:#0b302a;color:#d8fff0;box-shadow:0 8px 30px #13b88219;font-size:13px}.plan-current-dot{width:8px;height:8px;border-radius:50%;background:#42e6a6;box-shadow:0 0 13px #42e6a6}.plan-icon{margin-bottom:14px;width:44px;height:44px;color:#7cecff}.plan.featured{border-color:#39d8ff99;background:linear-gradient(155deg,#123651,#111b32 60%,#151b3b);box-shadow:0 0 0 1px #31d8ff28,0 27px 68px #0008,0 0 34px #22d7ff20,inset 0 1px #c9f7ff1c}.plan.featured:before{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(140deg,#43ddff0d,transparent 40%,#9962ff11)}.plan.featured .plan-icon{background:linear-gradient(145deg,#135579,#26205b);color:#b7f6ff;border-color:#56dcff66}.plan-vip{border-color:#9566e24d;background:linear-gradient(150deg,#1b2440,#13182e 58%,#201a3b)}.plan-vip .plan-icon{background:linear-gradient(145deg,#332357,#172a49);color:#c3a3ff;border-color:#b28aff55}.plan-compare-wrap{max-width:1050px;margin:54px auto 0}.plan-compare-wrap>h3{text-align:center;font-size:24px;letter-spacing:-.03em;margin:0 0 18px}.plan-compare-scroll{overflow-x:auto;border:1px solid #5da9db32;border-radius:18px;background:#0b1726;box-shadow:0 18px 48px #02091666}.plan-compare{border-collapse:collapse;width:100%;min-width:590px;text-align:center;font-size:13px}.plan-compare th,.plan-compare td{padding:14px 16px;border-bottom:1px solid #ffffff0d}.plan-compare thead th{color:#dff7ff;background:linear-gradient(100deg,#12304a,#1b2040);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.plan-compare th:first-child{text-align:left}.plan-compare tbody th{font-weight:600;color:#d8e5f4}.plan-compare td{color:#aebbd0}.plan-compare td:nth-child(3){color:#8ceeff;font-weight:700}.plan-compare tbody tr:last-child th,.plan-compare tbody tr:last-child td{border-bottom:0}.faq-grid details{transition:border-color .2s,transform .2s}.faq-grid details:hover{border-color:#4d95c477;transform:translateY(-1px)}.faq-grid summary:focus-visible,.plan button:focus-visible,.plan-compare-scroll:focus-visible{outline:2px solid #78e6ff;outline-offset:3px}
-@keyframes planIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}.plans-grid .plan{animation:planIn .55s both}.plans-grid .plan:nth-child(2){animation-delay:.08s}.plans-grid .plan:nth-child(3){animation-delay:.16s}
-@media(max-width:800px){.plan-benefits{grid-template-columns:1fr;max-width:500px;gap:10px}.plan-benefits article{padding:13px}.plan-compare-wrap{margin-top:42px}}
-@media(prefers-reduced-motion:reduce){.plans-grid .plan{animation:none!important}.faq-grid details{transition:none}}
-  
-/* SHELBY visual refresh — ink, electric lime and violet */
-:root{--bg:#080a0f;--panel:#11141d;--panel2:#181b27;--line:#2b2d39;--text:#f5f5f2;--muted:#a4a5ae;--lime:#d7ff4f;--lime2:#adce36;--orange:#ff805c;--radius:24px;--max:1240px}
-html{scroll-padding-top:104px}body{position:relative;background:radial-gradient(ellipse at 8% 5%,#a287ff18,transparent 29%),radial-gradient(ellipse at 92% 18%,#d7ff4f0c,transparent 28%),radial-gradient(ellipse at 45% 105%,#fe805c0c,transparent 30%),#080a0f;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:52px 52px;mask-image:linear-gradient(to bottom,black,transparent 76%)}[hidden]{display:none!important}.wrap{width:min(var(--max),calc(100% - 48px))}
-.nav{position:sticky;top:10px;z-index:30;height:72px;margin:12px auto;padding:10px 16px;border:1px solid #ffffff16;border-radius:22px;background:#11141de8;box-shadow:0 18px 44px #0008,inset 0 1px #ffffff0c;backdrop-filter:blur(18px)}.brand{gap:11px}.brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,#e7ff8b,#b5dd29);color:#15190b;box-shadow:0 8px 24px #c8f83c2e;font-weight:950}.brand-word{font-size:17px;letter-spacing:.18em}.nav-links{gap:8px}.nav-links a{padding:9px 12px;border-radius:10px;color:#bbbcc5;transition:background .2s,color .2s}.nav-links a:hover{background:#ffffff0b;color:#fff}.nav-account{gap:10px}.nav-cta,.btn,.product-link{border:1px solid #dfff7c;background:linear-gradient(125deg,#e2ff7e,#b8e72b);color:#121608;box-shadow:0 10px 27px #d5ff4322;font-weight:850}.btn-secondary{border:1px solid #ffffff24;background:#161923;color:#f1f1f4;transition:transform .2s,border-color .2s,background .2s}.btn-secondary:hover{border-color:#d7ff4f88;background:#20232a;transform:translateY(-2px)}button,a{transition-duration:.22s}
-.hero{position:relative;isolation:isolate;min-height:590px;margin-top:25px;padding:74px clamp(28px,6vw,82px);overflow:hidden;border:1px solid #ffffff17;border-radius:38px;background:radial-gradient(ellipse at 76% 35%,#a287ff20,transparent 38%),radial-gradient(ellipse at 15% 100%,#d7ff4f0c,transparent 44%),linear-gradient(135deg,#161923,#0d1018 55%,#171526);box-shadow:0 45px 100px #0007,inset 0 1px #ffffff14;grid-template-columns:1.05fr .95fr;gap:30px}.hero:after{content:"SENSI · MZ";top:34px;right:42px;color:#d7ff4f66;font-size:11px;letter-spacing:.24em}.hero h1{max-width:760px;font-size:clamp(56px,7vw,92px);line-height:.99;letter-spacing:-.075em}.hero h1 span,.section-head h2 span{color:#d7ff4f;text-shadow:0 0 34px #d7ff4f22}.hero-copy{max-width:570px;color:#babbc3;font-size:18px}.eyebrow{color:#d7ff4f;letter-spacing:.13em;font-size:11px}.dot{background:#d7ff4f;box-shadow:0 0 17px #d7ff4f88}.trust{gap:10px}.trust span{border:1px solid #ffffff17;border-radius:999px;background:#ffffff08;color:#c7c7cc;padding:8px 12px}.hero-visual{perspective:1100px}.hero-visual:before{width:min(445px,95%);background:radial-gradient(circle at 38% 30%,#d7ff4f35,transparent 23%),radial-gradient(circle at 62% 55%,#a287ff4a,transparent 53%),linear-gradient(145deg,#25283a,#171a26);border-color:#d7ff4f32;box-shadow:inset -32px -30px 68px #02030baa,inset 15px 17px 40px #fff2,0 50px 110px #000a;transform:rotateX(63deg) rotateZ(-27deg) translateY(55px)}.hero-visual:after{border-color:#d7ff4f33;box-shadow:0 0 48px #d7ff4f14}.phone{border:1px solid #ffffff38;border-radius:34px;background:linear-gradient(145deg,#303448,#151722);box-shadow:22px 28px 0 -12px #08090f,35px 50px 85px #000d,inset 1px 1px #fff4}.phone-screen{background:linear-gradient(155deg,#11141d,#1c1930)}.phone-brand{color:#e4ff88}.phone-bottom{background:#202d17;color:#e2ff83}.mini-row{border-bottom-color:#ffffff12}.mini-row b{color:#e3ff80}.visual-note{border-color:#ffffff20;background:linear-gradient(145deg,#222637,#151822);color:#f0f0f3;box-shadow:0 18px 45px #000a,inset 0 1px #fff2}
-.section{padding-top:90px;padding-bottom:90px}.section-head h2{font-size:clamp(34px,4.3vw,53px);letter-spacing:-.06em;line-height:1.08}.section-head p{color:#aeb0ba}.step,.plan,.generator-box,.product-card,.faq-grid details{border:1px solid #ffffff16;border-radius:22px;background:linear-gradient(145deg,#171a24,#10121a);box-shadow:0 24px 55px #0006,inset 0 1px #ffffff0b}.step{transition:transform .25s,border-color .25s}.step:hover{transform:translateY(-5px);border-color:#d7ff4f44}.step-icon{border:1px solid #d7ff4f28;background:linear-gradient(145deg,#252b18,#191b19);color:#d7ff4f}
-.plans{padding:80px 0 84px}.plan-benefits article{border-color:#ffffff18;background:linear-gradient(145deg,#171a24,#11131c);box-shadow:0 15px 35px #0005,inset 0 1px #ffffff0c}.plan-benefits article>span,.plan-icon{background:linear-gradient(145deg,#2a2c20,#1d1c29);color:#ddff6a;border-color:#d7ff4f38}.plan-current{border-color:#d7ff4f66;background:#202614;color:#eeffd2}.plan.featured{transform:translateY(-11px) scale(1.025);border-color:#d7ff4f99;background:radial-gradient(ellipse at 20% 0,#d7ff4f12,transparent 43%),linear-gradient(155deg,#20251a,#11141c 58%,#181525);box-shadow:0 0 0 1px #d7ff4f22,0 32px 76px #000a,0 0 35px #d7ff4f16,inset 0 1px #edffbd20}.plan.featured .popular{background:linear-gradient(110deg,#e5ff88,#bde83e);color:#111607;border-radius:999px}.plan.featured .plan-icon{background:linear-gradient(145deg,#343a21,#272337);color:#efffa8;border-color:#d7ff4f66}.plan-vip{border-color:#a287ff44;background:linear-gradient(150deg,#211c32,#12141d 60%,#211a2b)}.plan-vip .plan-icon{background:linear-gradient(145deg,#352b50,#211d34);color:#c8b7ff;border-color:#a287ff66}.plan h3{color:#f6f6f5}.price,.product-price{color:#e4ff87}.plan button{min-height:48px}.plan-compare-scroll{border-color:#ffffff19;background:#10131b}.plan-compare thead th{background:linear-gradient(100deg,#252a1b,#242036);color:#efffc0}.plan-compare td:nth-child(3){color:#e1ff7d}.plan-compare td:nth-child(4){color:#c4b1ff}.small-print{color:#989aa4}
-.community-section{width:min(var(--max),calc(100% - 48px));margin:32px auto 60px;scroll-margin-top:100px}.community-shell{position:relative;isolation:isolate;overflow:hidden;padding:clamp(22px,4.5vw,56px);border:1px solid #ffffff17;border-radius:34px;background:radial-gradient(ellipse at 7% 0,#d7ff4f0b,transparent 30%),radial-gradient(ellipse at 96% 18%,#a287ff13,transparent 35%),linear-gradient(145deg,#141720,#0d0f16 63%,#14121b);box-shadow:0 38px 95px #0009,inset 0 1px #ffffff12}.community-shell:before{content:"";position:absolute;z-index:-1;width:560px;height:560px;right:-240px;top:260px;border:1px solid #a287ff12;border-radius:50%;box-shadow:0 0 0 50px #a287ff06,0 0 0 100px #a287ff04;pointer-events:none}.community-heading{display:grid;grid-template-columns:1fr minmax(230px,360px);align-items:end;gap:30px;text-align:left;max-width:none;margin:0 0 26px}.community-heading h2{margin:12px 0 0;font-size:clamp(36px,5vw,58px)}.community-heading p{justify-self:end;margin:0;color:#aeb0ba;font-size:14px;line-height:1.7}.roster-toolbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:25px 0 36px}.player-search{display:flex;align-items:center;gap:10px;width:min(420px,100%);height:48px;padding:0 15px;border:1px solid #ffffff20;border-radius:14px;background:#090b11;color:#d7ff4f}.player-search>span{font-size:24px;line-height:1}.player-search input{width:100%;border:0;outline:0;background:transparent;color:#f6f6f4;font-size:13px}.player-search input::placeholder{color:#777984}.player-search:focus-within{border-color:#d7ff4f88;box-shadow:0 0 0 3px #d7ff4f15}.player-count{color:#a2a4ad;font-size:12px;white-space:nowrap}.player-group{margin-top:36px}.roster-title{display:flex;align-items:center;gap:14px;margin:0 0 17px}.roster-index{display:grid;place-items:center;width:38px;height:38px;border:1px solid #d7ff4f3b;border-radius:12px;background:#d7ff4f0d;color:#d7ff4f;font-weight:850;font-size:12px}.roster-title h3{margin:0;color:#f7f7f5;font-size:20px;letter-spacing:-.03em}.roster-title p{margin:2px 0 0;color:#8d909a;font-size:12px}.player-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;perspective:1600px}.player-grid-community{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.player-card{--rx:0deg;--ry:0deg;position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;align-items:stretch;min-width:0;padding:0;border:1px solid #ffffff19;border-radius:22px;background:linear-gradient(150deg,#1b1e28,#10121a 70%,#191626);box-shadow:0 18px 42px #0007,inset 0 1px #ffffff12;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;transition:transform .2s ease-out,border-color .25s,box-shadow .25s}.player-card:before{content:"";position:absolute;z-index:2;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(140deg,#ffffff0c,transparent 38%,#d7ff4f05)}.player-card:hover{z-index:3;transform:perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-7px) translateZ(8px);border-color:#d7ff4f77;box-shadow:0 30px 65px #000a,0 0 0 1px #d7ff4f15,inset 0 1px #ffffff21}.player-card.featured-player:nth-child(2){border-color:#a287ff4c}.player-card.featured-player:nth-child(2):hover{border-color:#a287ff}.player-card.featured-player:nth-child(3){border-color:#ff805c3b}.player-card.featured-player:nth-child(3):hover{border-color:#ff805c}.player-avatar{display:block;width:100%;height:auto;aspect-ratio:1.32/1;object-fit:cover;object-position:center 36%;border:0;border-radius:0;transform:translateZ(8px);transition:transform .42s,filter .35s;filter:saturate(1.1)}.player-card:hover .player-avatar{transform:translateZ(17px) scale(1.025);filter:saturate(1.22)}.player-info{position:relative;z-index:3;width:100%;padding:17px 17px 18px;transform:translateZ(12px)}.player-kicker{display:inline-flex;align-items:center;gap:6px;color:#d7ff4f;font-size:9px;font-weight:850;letter-spacing:.13em}.player-info h3{margin:8px 0 2px;color:#f5f5f2;font-size:17px;line-height:1.25;letter-spacing:-.025em;overflow-wrap:anywhere}.player-info .player-handle{margin:0;color:#b9a8ff;font-size:12px}.player-info .player-description{min-height:34px;margin:9px 0 12px;color:#a5a6af;font-size:11px;line-height:1.55}.player-socials{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:10px}.profile-visit,.channel-visit{display:inline-flex;align-items:center;justify-content:center;gap:5px;min-height:32px;padding:7px 10px;border:1px solid #ffffff1b;border-radius:10px;background:#ffffff08;color:#ececf0;font-size:10px;font-weight:750;transition:transform .2s,border-color .2s,color .2s}.profile-visit:hover,.channel-visit:hover{transform:translateY(-2px);border-color:#d7ff4f77;color:#efffa8}.channel-visit{border-color:#5bbc7b33;background:#18332355;color:#a7e9ba}.channel-visit:hover{border-color:#6dd48a;color:#baffca}.player-select{width:100%;min-height:43px;margin-top:2px;padding:10px 9px;border:1px solid #e2ff7c88;border-radius:12px;background:linear-gradient(110deg,#e5ff83,#b8e336);color:#121609;box-shadow:0 8px 22px #d7ff4f17;font-weight:900;font-size:11px;line-height:1.2;cursor:pointer;transition:transform .2s,box-shadow .2s,filter .2s}.player-select:hover{transform:translateY(-2px);filter:brightness(1.06);box-shadow:0 13px 26px #d7ff4f2a}.whatsapp-hub{display:grid;grid-template-columns:minmax(220px,.75fr) 1.7fr;align-items:center;gap:26px;margin-top:44px;padding:24px;border:1px solid #5cb97d30;border-radius:22px;background:radial-gradient(ellipse at 8% 20%,#36b66e10,transparent 45%),linear-gradient(135deg,#121d19,#11151b)}.whatsapp-head{display:flex;align-items:flex-start;gap:14px}.whatsapp-symbol{display:grid;place-items:center;flex:none;width:44px;height:44px;border:1px solid #68d58a66;border-radius:15px;background:#1a3926;color:#9df0b4;font-size:22px}.whatsapp-head h3{margin:4px 0;color:#f2f5ef;font-size:18px}.whatsapp-head p{margin:0;color:#9da8a0;font-size:11px}.whatsapp-links{display:flex;flex-wrap:wrap;gap:8px}.whatsapp-links a{display:flex;align-items:center;gap:8px;padding:9px 11px;border:1px solid #ffffff17;border-radius:999px;background:#ffffff07;color:#d6ddd8;font-size:10px;font-weight:700;transition:transform .2s,border-color .2s,color .2s}.whatsapp-links a:hover{transform:translateY(-2px);border-color:#72dc8e77;color:#b7ffc7}
-.generator{padding-top:72px}.generator-box{border-radius:30px;padding:clamp(26px,5vw,50px);background:radial-gradient(ellipse at 8% 0,#a287ff15,transparent 40%),linear-gradient(145deg,#171a25,#10121a);border-color:#ffffff1b;box-shadow:0 30px 80px #0008,inset 0 1px #fff1}.generator-box h2{letter-spacing:-.055em}.field select,.field input{background:#090b11;border-color:#ffffff20;color:#f3f3f2;border-radius:12px}.field select:focus,.field input:focus{border-color:#d7ff4f77;outline:2px solid #d7ff4f22}.tip{border-left-color:#d7ff4f;background:#d7ff4f0b;color:#d5d7ca}.result{border-color:#ffffff1d;background:#11141d}.result-cell{border:1px solid #ffffff0d;border-radius:12px;background:#090b11}.result-cell b{color:#e5ff87}.result-head span{color:#d7ff4f}.shop-grid{gap:20px}.product-card{min-height:250px;padding:26px;border-radius:23px}.product-icon{border:1px solid #a287ff3b;background:#201b30;color:#c1adff}.product-link{border-radius:11px}.product-note{color:#999ba4}.faq-grid{gap:12px}.faq-grid details{border-radius:16px;background:linear-gradient(145deg,#171a23,#11131a)}.faq-grid summary{color:#f4f4f1}.faq-grid details p{color:#a8aab2}.footer{border-top:1px solid #ffffff14;background:#0b0c11}.footer strong{color:#e1ff7f}.app-dialog{border:1px solid #ffffff22;border-radius:24px;background:linear-gradient(145deg,#191c27,#0e1017);color:#f5f5f2;box-shadow:0 30px 100px #000c}.app-dialog::backdrop{background:#030407c9;backdrop-filter:blur(8px)}.dialog-note{color:#a3a5ad}.dialog-status.success{color:#a5f2bf}.dialog-status.error{color:#ff9a8e}
-@media(max-width:1050px){.player-grid-community{grid-template-columns:repeat(3,minmax(0,1fr))}.community-shell{padding:34px}.hero{min-height:540px}.plan.featured{transform:translateY(-5px) scale(1.01)}}
-@media(max-width:800px){.wrap{width:min(var(--max),calc(100% - 32px))}.nav{height:65px;margin:8px auto}.nav-links{display:none}.hero{grid-template-columns:1fr;min-height:0;margin-top:12px;padding:54px 28px 34px;gap:12px;border-radius:28px}.hero-visual{min-height:330px}.section{padding-top:65px;padding-bottom:65px}.plans-grid{grid-template-columns:1fr;max-width:560px;margin:auto;gap:15px}.plan.featured{transform:none;order:-1}.plan-desc{min-height:0}.community-section{width:calc(100% - 32px);margin-top:12px}.community-shell{padding:27px 20px;border-radius:28px}.community-heading{grid-template-columns:1fr;gap:10px;text-align:left}.community-heading p{justify-self:start}.player-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.player-grid-community{grid-template-columns:repeat(2,minmax(0,1fr))}.player-info{padding:14px 12px}.player-info h3{font-size:15px}.player-description{min-height:44px}.whatsapp-hub{grid-template-columns:1fr;gap:18px;padding:19px}.generator-box{grid-template-columns:1fr;gap:22px}.plan-benefits{grid-template-columns:1fr;max-width:560px}.faq-grid{grid-template-columns:1fr}.shop-grid{grid-template-columns:1fr;max-width:600px;margin:auto}}
-@media(max-width:440px){.wrap{width:calc(100% - 24px)}.nav{padding:8px 11px}.brand-word{font-size:14px}.nav-account{gap:6px}.nav-account .btn-secondary{padding:8px 10px}.nav-cta{padding:9px 10px;font-size:10px}.hero{padding:45px 20px 25px}.hero h1{font-size:clamp(43px,12vw,58px)}.hero-copy{font-size:15px}.hero-visual{min-height:295px}.phone{width:250px}.visual-note{right:0;bottom:2px;font-size:10px}.community-section{width:calc(100% - 20px)}.community-shell{padding:24px 12px;border-radius:23px}.community-heading h2{font-size:36px}.roster-toolbar{align-items:flex-start;margin:20px 0 27px}.player-search{height:44px}.player-count{padding-top:12px;font-size:10px}.roster-title{gap:10px}.roster-title h3{font-size:18px}.player-grid,.player-grid-community{gap:10px}.player-card{border-radius:17px}.player-avatar{aspect-ratio:1/1}.player-info{padding:12px 10px}.player-info h3{font-size:13px}.player-info .player-handle{font-size:10px}.player-info .player-description{font-size:10px;min-height:44px}.player-kicker{font-size:8px}.player-socials{gap:5px}.profile-visit,.channel-visit{min-height:30px;padding:6px 7px;font-size:9px}.player-select{font-size:9px;padding:10px 5px}.whatsapp-links{gap:6px}.whatsapp-links a{font-size:9px;padding:8px 9px}.plan-compare{min-width:540px}.plan-current{font-size:11px}.plans{padding-top:58px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.player-card,.player-avatar,.player-select,.btn-secondary,.whatsapp-links a,.profile-visit,.channel-visit,.plan,.faq-grid details{transition:none!important;animation:none!important}.player-card{transform:none!important}.player-card:hover{transform:none!important}}
-  </style>
-</head>
-<body>
-  <header class="wrap nav">
-    <a class="brand" href="#inicio" aria-label="S H E L B Y início"><span class="brand-mark">S</span><span class="brand-word">S H E L B Y</span></a>
-    <nav class="nav-links" aria-label="Navegação"><a href="#planos">Planos</a><a href="#jogadores">Jogadores MZ</a><a href="#loja">Conteúdos</a><a href="#gerador">Gerador</a></nav>
-    <div class="nav-account"><button class="btn-secondary" id="account-button" type="button" onclick="openAccount()">Entrar</button><button class="nav-cta" onclick="document.querySelector('#gerador').scrollIntoView({behavior:'smooth'})">Gerar minha sensi ↗</button></div>
-  </header>
-  <main>
-    <section class="wrap hero" id="inicio">
-      <div>
-        <div class="eyebrow"><span class="dot"></span> Para jogadores de Free Fire</div>
-        <h1>Free Fire MZ.<br>Feito para o <span>teu jogo.</span></h1>
-        <p class="hero-copy">Jogadores, conteúdos e ferramentas de sensibilidade para a comunidade Free Fire em Moçambique.</p>
-        <div class="hero-actions"><button class="btn" onclick="document.querySelector('#gerador').scrollIntoView({behavior:'smooth'})">Explorar o gerador <span aria-hidden="true">→</span></button><button class="btn-secondary" onclick="document.querySelector('#jogadores').scrollIntoView({behavior:'smooth'})">Conhecer jogadores</button></div>
-        <div class="trust"><span>Perfis da comunidade</span><span>Ferramentas de jogo</span><span>Conteúdos em MZN</span></div>
-      </div>
-      <div class="hero-visual" aria-label="Prévia das recomendações de sensibilidade">
-        <div class="glow"></div><div class="phone"><div class="phone-top"><span>9:41</span><span>● ● ●</span></div><div class="phone-screen"><div class="phone-brand">S H E L B Y <span class="badge">SENSI</span></div><div class="phone-sub">Perfil equilibrado · Android</div><div class="mini-row"><span>Geral</span><b>92</b></div><div class="mini-row"><span>Ponto vermelho</span><b>86</b></div><div class="mini-row"><span>Mira 2×</span><b>79</b></div><div class="mini-row"><span>Mira 4×</span><b>68</b></div><div class="mini-row"><span>AWM</span><b>43</b></div><div class="phone-bottom">Sugestão inicial · ajusta no treino</div></div></div><div class="visual-note"><strong>Perfil personalizado</strong><br>por estilo e dispositivo</div>
-      </div>
-    </section>
-    <section class="wrap section plans" id="planos">
-      <div class="section-head"><div class="eyebrow"><span class="dot"></span> Planos SHELBY</div><h2>Escolhe como queres jogar.</h2><p>Planos pagos por 30 dias, sem renovação automática. Pagamento por M-Pesa ou e-Mola.</p></div><div class="plan-benefits" aria-label="Como funciona"><article><span>⌁</span><div><b>Ajustado ao teu aparelho</b><small>Escolhe a categoria do dispositivo.</small></div></article><article><span>◎</span><div><b>Ao teu estilo</b><small>Define o estilo antes de gerar.</small></div></article><article><span>↗</span><div><b>Tu controlas os ajustes</b><small>Testa e adapta no treino.</small></div></article></div><div class="plan-current" id="plan-current" aria-live="polite" hidden></div>
-      <div class="selected-player-plan" id="selected-player-plan" hidden></div>
-      <div class="plans-grid">
-        <article class="plan"><div class="plan-icon" aria-hidden="true">◌</div><div class="plan-label">Normal · Gratuito</div><h3>Experimenta primeiro</h3><div class="price">Grátis</div><p class="plan-desc">Uma forma simples de testar o gerador com as tuas escolhas.</p><ul class="features"><li>Uma geração grátis neste navegador</li><li>Escolha de dispositivo e estilo</li><li>Sugestão inicial com botão de tiro e DPI</li></ul><button class="btn-secondary" onclick="useNormalPlan()">Começar gratuitamente <span aria-hidden="true">→</span></button></article>
-        <article class="plan featured"><div class="popular">MAIS POPULAR</div><div class="plan-icon" aria-hidden="true">✦</div><div class="plan-label">Pro</div><h3>Desbloqueia uma sensi de jogador</h3><div class="price">49 <small>MZN / 30 dias</small></div><p class="plan-desc">Escolhe o perfil de um jogador e gera uma sugestão baseada no teu aparelho e estilo.</p><ul class="features"><li>Acesso durante 30 dias após confirmação</li><li>Geração associada ao perfil escolhido</li><li>Personalização por dispositivo e estilo</li><li>Pagamento confirmado pela Pagar</li></ul><button class="btn" onclick="openCheckout('pro')">Escolher Pro <span aria-hidden="true">→</span></button></article>
-        <article class="plan plan-vip"><div class="plan-icon" aria-hidden="true">✧</div><div class="plan-label">VIP</div><h3>Acesso VIP</h3><div class="price">99 <small>MZN / 30 dias</small></div><p class="plan-desc">Acesso ao gerador de perfil durante 30 dias após confirmação do pagamento.</p><ul class="features"><li>Acesso ao mesmo gerador de perfis do Pro</li><li>Personalização por dispositivo e estilo</li><li>Confirmação de acesso pela Pagar</li><li>Vantagens VIP adicionais ainda não configuradas</li></ul><button class="btn-secondary" onclick="openCheckout('vip')">Escolher VIP <span aria-hidden="true">→</span></button></article>      </div><p class="small-print">Os planos pagos duram 30 dias e não renovam automaticamente. O acesso só ativa após confirmação da Pagar. As vantagens extra do VIP ainda dependem de implementação.</p><div class="plan-compare-wrap"><h3>Compara os planos</h3><div class="plan-compare-scroll" role="region" aria-label="Comparação dos planos" tabindex="0"><table class="plan-compare"><thead><tr><th scope="col">Funcionalidade</th><th scope="col">Normal</th><th scope="col">Pro</th><th scope="col">VIP</th></tr></thead><tbody><tr><th scope="row">Geração grátis</th><td>Uma vez</td><td>—</td><td>—</td></tr><tr><th scope="row">Escolher dispositivo e estilo</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Gerar sensi ligada a um perfil</th><td>—</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Duração do acesso pago</th><td>—</td><td>30 dias</td><td>30 dias</td></tr><tr><th scope="row">Histórico, favoritos e comparação</th><td>Não disponível</td><td>Não disponível</td><td>Não disponível</td></tr><tr><th scope="row">Benefícios exclusivos VIP</th><td>—</td><td>—</td><td>Ainda não configurados</td></tr></tbody></table></div><p class="small-print">Histórico, favoritos e comparação precisam de suporte adicional no site/servidor.</p></div>
-    </section>
-    <section class="community-section" id="jogadores">
-      <div class="community-shell">
-        <div class="section-head community-heading"><div><div class="eyebrow"><span class="dot"></span> Comunidade SHELBY · Moçambique</div><h2>Conhece os <span>jogadores.</span></h2></div><p>Perfis organizados por destaque e nome. Abre o TikTok, acompanha os canais ou escolhe a sensi do jogador.</p></div>
-        <div class="roster-toolbar"><label class="player-search"><span aria-hidden="true">⌕</span><input id="player-search" type="search" placeholder="Pesquisar nome ou @handle" autocomplete="off" aria-label="Pesquisar jogador"></label><span id="player-count" class="player-count">11 perfis</span></div>
-        <div class="player-group"><div class="roster-title"><span class="roster-index">01</span><div><h3>Destaques</h3><p>Perfis em destaque na SHELBY.</p></div></div><div class="player-grid player-grid-featured">
-          <article class="player-card featured-player"><img class="player-avatar" src="hugo-mabote.jpg" alt="Foto de perfil de Hugo Mabote" loading="lazy"><div class="player-info"><span class="player-kicker">JOGADOR MZ</span><h3>Hugo Mabote</h3><p class="player-handle">@hugomabote</p><p class="player-description">Canal WhatsApp: Hugo Mabote.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@hugomabote" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a><a class="channel-visit" href="https://whatsapp.com/channel/0029Vb5vIP89Bb5s7belUy2C" target="_blank" rel="noopener noreferrer">Canal WhatsApp</a></div></div></article>
-          <article class="player-card featured-player"><img class="player-avatar" src="henzoxs.jpg" alt="Foto de perfil de HenzoXs Oficial" loading="lazy"><div class="player-info"><span class="player-kicker">JOGADOR MZ</span><h3>HenzoXs Oficial ✔️</h3><p class="player-handle">@henzoxs_oficial</p><p class="player-description">Canal Henzo Xs oficial ✔️.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@henzoxs_oficial" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a><a class="channel-visit" href="https://whatsapp.com/channel/0029Vb3ihDJ5kg7EUdjPFs3F" target="_blank" rel="noopener noreferrer">Canal WhatsApp</a></div></div></article>
-          <article class="player-card featured-player"><img class="player-avatar" src="shelby.jpg" alt="Foto de perfil de SHELBY" loading="lazy"><div class="player-info"><span class="player-kicker">CRIADOR SHELBY</span><h3>S H E L B Y</h3><p class="player-handle">@shelby.mz</p><p class="player-description">Canal S H E L B Y MZ ofc no WhatsApp.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@shelby.mz" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a><a class="channel-visit" href="https://whatsapp.com/channel/0029Vb8PJKoHFxP5uQzP6m27" target="_blank" rel="noopener noreferrer">WhatsApp SHELBY</a></div></div></article>
-        </div></div>
-        <div class="player-group"><div class="roster-title"><span class="roster-index">02</span><div><h3>Mais jogadores</h3><p>Outros perfis partilhados pela comunidade.</p></div></div><div class="player-grid player-grid-community">
-          <article class="player-card"><img class="player-avatar" src="sakura.jpg" alt="Foto de perfil de SAKURA" loading="lazy"><div class="player-info"><span class="player-kicker">PERFIL MZ</span><h3>SAKURA 🩸ˣ</h3><p class="player-handle">@mii_sakura0</p><p class="player-description">Canal SAKURA 🩸ˣ no WhatsApp.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@mii_sakura0" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a><a class="channel-visit" href="https://whatsapp.com/channel/0029VbCmOX2AojYwuLLwyb1D" target="_blank" rel="noopener noreferrer">Canal WhatsApp</a></div></div></article>
-          <article class="player-card"><img class="player-avatar" src="nkuta.jpg" alt="Foto de perfil de nkuta200k" loading="lazy"><div class="player-info"><span class="player-kicker">PERFIL TIKTOK</span><h3>nkuta200k</h3><p class="player-handle">@nkuta200k</p><p class="player-description">Perfil TikTok partilhado pela comunidade.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@nkuta200k" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="player-card"><img class="player-avatar" src="loudqueen.jpg" alt="Foto de perfil de LOUD QUEEN" loading="lazy"><div class="player-info"><span class="player-kicker">PERFIL TIKTOK</span><h3>LOUD QUEEN</h3><p class="player-handle">@loudqueen999</p><p class="player-description">Perfil TikTok partilhado pela comunidade.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@loudqueen999" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="player-card"><img class="player-avatar" src="barbie.jpg" alt="Foto de perfil de Barbie FF" loading="lazy"><div class="player-info"><span class="player-kicker">PERFIL MZ</span><h3>Barbie FF 🇲🇿</h3><p class="player-handle">@barbieff.mz</p><p class="player-description">Canal Barbie FF 🇲🇿 no WhatsApp.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@barbieff.mz" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a><a class="channel-visit" href="https://whatsapp.com/channel/0029Vb8PDiMGpLHLZBGSl92R" target="_blank" rel="noopener noreferrer">Canal WhatsApp</a></div></div></article>
-          <article class="player-card"><img class="player-avatar" src="helton.jpg" alt="Foto de perfil de Helton TV" loading="lazy"><div class="player-info"><span class="player-kicker">PERFIL TIKTOK</span><h3>Helton TV</h3><p class="player-handle">@helton.tv</p><p class="player-description">Perfil TikTok partilhado pela comunidade.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@helton.tv" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="player-card"><img class="player-avatar" src="gumball.jpg" alt="Foto de perfil de Gumball MZ" loading="lazy"><div class="player-info"><span class="player-kicker">CRIADOR MZ</span><h3>Gumball MZ 🇲🇿</h3><p class="player-handle">@gumball._mz</p><p class="player-description">Canal Gumball MZ 🇲🇿 no WhatsApp.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@gumball._mz" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a><a class="channel-visit" href="https://whatsapp.com/channel/0029VbCjRAt9Gv7YJDdnMV3w" target="_blank" rel="noopener noreferrer">Canal WhatsApp</a></div></div></article>
-          <article class="player-card"><img class="player-avatar" src="pandora.jpg" alt="Foto de perfil de PANDORA" loading="lazy"><div class="player-info"><span class="player-kicker">PERFIL TIKTOK</span><h3>PANDORA 💞</h3><p class="player-handle">@pandora_mz</p><p class="player-description">Perfil TikTok partilhado pela comunidade.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@pandora_mz" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a></div></div></article>
-          <article class="player-card"><img class="player-avatar" src="califer.jpg" alt="Foto de perfil de Califer gamer play" loading="lazy"><div class="player-info"><span class="player-kicker">PERFIL TIKTOK</span><h3>Califer gamer play 🎮 Otaku</h3><p class="player-handle">@califer.game.play</p><p class="player-description">Perfil TikTok partilhado pela comunidade.</p><div class="player-socials"><a class="profile-visit" href="https://www.tiktok.com/@califer.game.play" target="_blank" rel="noopener noreferrer">Ver TikTok <span aria-hidden="true">↗</span></a></div></div></article>
-        </div></div>
-        <aside class="whatsapp-hub" aria-labelledby="whatsapp-title"><div class="whatsapp-head"><span class="whatsapp-symbol" aria-hidden="true">◉</span><div><span class="player-kicker">ACOMPANHA A COMUNIDADE</span><h3 id="whatsapp-title">WhatsApp da comunidade</h3><p>Entra no grupo ou acompanha os canais partilhados.</p></div></div><div class="whatsapp-links"><a href="https://whatsapp.com/channel/0029Vb8PJKoHFxP5uQzP6m27" target="_blank" rel="noopener noreferrer">S H E L B Y MZ ofc <span aria-hidden="true">↗</span></a><a href="https://whatsapp.com/channel/0029VbCGwyf2phHQJXNcRD0S" target="_blank" rel="noopener noreferrer">S H E L B Y QUEEN <span aria-hidden="true">↗</span></a><a href="https://chat.whatsapp.com/GUGtDQgVxcxKzvYcmPeYUB?s=cl&amp;p=i&amp;mlu=4&amp;ilr=4&amp;iam=2" target="_blank" rel="noopener noreferrer">Grupo da comunidade <span aria-hidden="true">↗</span></a><a href="https://whatsapp.com/channel/0029VbCmOX2AojYwuLLwyb1D" target="_blank" rel="noopener noreferrer">SAKURA 🩸ˣ <span aria-hidden="true">↗</span></a><a href="https://whatsapp.com/channel/0029Vb8PDiMGpLHLZBGSl92R" target="_blank" rel="noopener noreferrer">Barbie FF 🇲🇿 <span aria-hidden="true">↗</span></a><a href="https://whatsapp.com/channel/0029Vb5vIP89Bb5s7belUy2C" target="_blank" rel="noopener noreferrer">Hugo Mabote <span aria-hidden="true">↗</span></a><a href="https://whatsapp.com/channel/0029Vb3ihDJ5kg7EUdjPFs3F" target="_blank" rel="noopener noreferrer">Henzo Xs oficial ✔️ <span aria-hidden="true">↗</span></a><a href="https://whatsapp.com/channel/0029VbCjRAt9Gv7YJDdnMV3w" target="_blank" rel="noopener noreferrer">Gumball MZ 🇲🇿 <span aria-hidden="true">↗</span></a><a href="https://whatsapp.com/channel/0029Vb7CigD1dAw0ieBc1q33" target="_blank" rel="noopener noreferrer">RNS SERVICES 🇲🇿 <span aria-hidden="true">↗</span></a></div></aside>
-      </div>
-    </section>
-    <section class="wrap section shop" id="loja">
-      <div class="section-head"><div class="eyebrow"><span class="dot"></span> Para os teus edits</div><h2>Clips, música e efeitos</h2><p>Materiais digitais para criares e editares vídeos de Free Fire.</p></div>
-      <div class="shop-grid">
-        <article class="product-card"><div class="product-icon" aria-hidden="true">▶</div><h3>Clips para seus edits</h3><p>Clips de Free Fire para usares nas tuas edições.</p><div class="product-bottom"><div class="product-price">47 <small>MZN</small></div><a class="product-link" href="https://pagar.co.mz/p/clips-para-seus-edits-0e9teq" target="_blank" rel="noopener noreferrer">Ver material ↗</a></div></article>
-        <article class="product-card"><div class="product-icon" aria-hidden="true">♫</div><h3>CapCut Free Fire: clips, música &amp; SFX</h3><p>Clips, sincronização com música e efeitos sonoros, com orientação de uso.</p><div class="product-bottom"><div class="product-price">56 <small>MZN</small></div><a class="product-link" href="https://pagar.co.mz/p/capcut-free-fire-sincronizacao-de-clips-musica-s-1kpbef" target="_blank" rel="noopener noreferrer">Ver material ↗</a></div></article>
-      </div><p class="product-note">Abre cada página para ver os detalhes e concluir a compra com segurança pela Pagar.</p>
-    </section>
-    <section class="wrap section" id="como-funciona">
-      <div class="section-head"><div class="eyebrow"><span class="dot"></span> Sem complicação</div><h2>Da escolha ao treino em três passos</h2><p>Uma recomendação para começares. Tu decides o ajuste final dentro do jogo.</p></div>
-      <div class="steps"><article class="step"><div class="step-num">01</div><h3>Conta-nos o teu estilo</h3><p>Escolhe o tipo de mira e o ritmo com que gostas de jogar.</p></article><article class="step"><div class="step-num">02</div><h3>Recebe a sugestão</h3><p>O gerador monta valores de partida para as opções de sensibilidade.</p></article><article class="step"><div class="step-num">03</div><h3>Testa e ajusta</h3><p>Experimenta no modo de treino e afina até te sentires confortável.</p></article></div>
-    </section>
-    
-    <section class="wrap section generator" id="gerador">
-      <div class="generator-box"><div class="generator-intro"><div class="eyebrow"><span class="dot"></span> Gerador</div><h2>Gera. Testa.<br>Ajusta ao teu jogo.</h2><p>Escolhe o aparelho, o estilo e a experiência. Recebe sensibilidade, tamanho inicial do botão de tiro e uma orientação para o DPI.</p><div class="tip">O tamanho do botão e o DPI dependem do ecrã, da pegada e das opções do teu Android. Usa a sugestão como ponto de partida; muda pouco a pouco no treino.</div></div><div><div class="selected-player" id="selected-player-label" aria-live="polite"></div><form id="sensi-form"><div class="form-grid"><div class="field"><label for="device">Categoria do aparelho</label><select id="device"><option value="balanced">Escolher uma opção</option><option value="entry">Básico / entrada</option><option value="mid">Intermédio</option><option value="flagship">Topo de gama</option></select></div><div class="field"><label for="style">Estilo de jogo</label><select id="style"><option value="balanced">Equilibrado</option><option value="rush">Agressivo / rush</option><option value="precision">Preciso / distância</option></select></div><div class="field full"><label for="experience">Experiência com sensibilidade</label><select id="experience"><option value="new">Quero começar com algo simples</option><option value="some">Já costumo ajustar</option><option value="advanced">Quero experimentar valores mais altos</option></select></div></div><button class="btn generate" type="submit">Gerar minha sensibilidade <span aria-hidden="true">→</span></button></form><div class="result" id="result" aria-live="polite"><div class="result-head">A tua sugestão de partida <span>Normal · grátis</span></div><div class="result-grid" id="result-grid"></div><p class="result-note">Estes valores são uma referência inicial, não uma garantia. Experimenta no modo de treino e ajusta manualmente. O site não altera definições no teu aparelho.</p></div></div></div>
-    </section>
-    <section class="wrap section faq"><div class="section-head"><div class="eyebrow"><span class="dot"></span> Perguntas comuns</div><h2>Antes de começares</h2></div><div class="faq-grid"><details><summary>Qual é a diferença entre Normal, Pro e VIP?</summary><p>O Normal permite uma geração gratuita neste navegador. Pro e VIP desbloqueiam o gerador ligado ao perfil escolhido por 30 dias após confirmação do pagamento. Neste momento, o VIP não tem benefícios adicionais implementados.</p></details><details><summary>Posso mudar de plano mais tarde?</summary><p>Podes iniciar outro pedido Pro ou VIP quando quiseres. O novo acesso só é reconhecido depois da confirmação do pagamento pela Pagar.</p></details><details><summary>Como funciona a personalização?</summary><p>Escolhe o dispositivo e o estilo de jogo. O site calcula uma sugestão inicial; testa no treino e ajusta manualmente. Não é uma configuração oficial do jogador.</p></details><details><summary>Como cancelo a subscrição?</summary><p>Os planos atuais duram 30 dias e não renovam automaticamente, por isso não há renovação para cancelar.</p></details><details><summary>Os pagamentos são seguros?</summary><p>O site envia o pedido ao servidor e só ativa o acesso após a Pagar confirmar. Usa apenas o checkout do site; não partilhes códigos de confirmação com outras pessoas.</p></details><details><summary>Posso guardar ou comparar configurações?</summary><p>O histórico, favoritos e comparação ainda não estão disponíveis nesta versão.</p></details><details><summary>O site altera as definições dentro do jogo?</summary><p>Não. O site apresenta valores para inserires e ajustares manualmente no jogo.</p></details><details><summary>Estas sugestões garantem mais capas?</summary><p>Não. O resultado é apenas uma referência inicial e não garante desempenho.</p></details><details><summary>Que métodos de pagamento estão disponíveis?</summary><p>O checkout atual aceita M-Pesa e e-Mola. O acesso depende da confirmação recebida pelo servidor.</p></details></div></section>
-  </main>
-  <footer class="footer"><div class="wrap footer-inner"><div><strong>S H E L B Y.</strong> Sugestões para personalizar o teu jogo.</div><div>Projeto independente, sem afiliação ou endosso da Garena.</div><div>© 2026 S H E L B Y</div></div></footer>
+<html lang="pt" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SHELBY — Loja Digital · Free Fire MZ</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400&family=Inter:wght@400;500;600;700&family=Unbounded:wght@600;700;800;900&display=swap"
+    />
+    <link rel="stylesheet" href="hark.css" />
+    <link rel="stylesheet" href="hark-hero.css" />
+    <style>
+      :root{--sans:"Inter",system-ui,sans-serif}
+      .x-site h1,.x-site h2,.x-site h3,.x-btn,.x-tab,.nav a:first-child{font-family:"Unbounded",var(--sans)}
+      .x-site h1,.x-site h2{font-weight:800;letter-spacing:-.02em}
+      .x-site{--x-bg:#f2f1ee;--x-ink:#111;--x-ink2:#55534e;--x-or:#ff5a1f;--x-or-ink:#a8360b;--x-line:rgba(17,17,17,.1);--x-px:"Unbounded",var(--sans);background:var(--x-bg);color:var(--x-ink);overflow-x:clip}
+      .x-site .main{padding-top:0}
+      .x-px{font-family:var(--x-px);font-weight:900;letter-spacing:-.04em;line-height:.9;max-width:100%;text-transform:uppercase}
+      .x-sec{padding:96px var(--gutter) 24px;max-width:var(--page-max);margin:0 auto;scroll-margin-top:72px}
+      .x-k{font:var(--type-tag);font-family:var(--x-px);color:var(--x-or-ink);text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px}
+      .x-h2{font-family:var(--x-px);font-weight:800;font-size:clamp(28px,5.5vw,64px);line-height:.9;margin:0 0 12px;color:var(--x-ink);text-transform:uppercase}
+      .x-sub{font:var(--type-body);color:var(--x-ink2);max-width:56ch;margin:0 0 32px}
+      .x-btn{display:inline-flex;align-items:center;gap:8px;min-height:var(--tap);padding:0 18px;border-radius:var(--r-pill);font:var(--type-label);font-weight:var(--weight-bold);text-decoration:none;border:1px solid var(--x-ink);color:var(--x-ink);background:transparent;cursor:pointer;transition:transform var(--dur-quick) var(--ease-out),background var(--dur-quick)}
+      .x-btn:hover{transform:translateY(-2px)}
+      .x-btn svg{width:16px;height:16px;fill:currentColor}
+      .x-btn--or{background:var(--x-or);border-color:var(--x-or);color:var(--x-ink)}
+      .x-btn--ink{background:var(--x-ink);color:#fff}
+      .x-btn--light{border-color:rgba(255,255,255,.5);color:#fff}
+      .x-btns{display:flex;flex-wrap:wrap;gap:8px}
+      /* hero */
+      .x-hero{position:relative;min-height:max(680px,100svh);display:grid;place-items:center;overflow:hidden;padding:88px var(--gutter) 40px}
+      .x-hero__word{position:absolute;inset:0;display:grid;place-items:center;margin:0;font-size:clamp(48px,15vw,250px);white-space:nowrap;overflow:hidden;color:var(--x-ink);pointer-events:none;user-select:none}
+      .x-hero__word span{display:block;transform:translateY(-4%)}
+      #x-stage{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;display:none}
+      #x-stage.is-on{display:block}
+      .x-band__in,.x-sec>*,.foot{position:relative;z-index:2}
+      .x-sound2{position:fixed;right:max(var(--gutter),16px);bottom:max(16px,env(safe-area-inset-bottom,0px));z-index:21;width:52px;height:52px;padding:0;justify-content:center;border-radius:50%;font-size:20px;box-shadow:var(--hark-shadow);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity var(--dur-quick) var(--ease-out),transform var(--dur-quick) var(--ease-out),visibility 0s linear var(--dur-quick)}
+      .x-sound2.is-on{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+      .x-sound2[aria-pressed="true"]{background:var(--x-or);border-color:var(--x-or);color:var(--x-ink)}
+      .x-fallback{position:relative;z-index:1;width:min(270px,62vw);aspect-ratio:9/19;border-radius:40px;background:#151515;padding:10px;box-shadow:var(--hark-shadow)}
+      .x-fallback video{width:100%;height:100%;object-fit:cover;border-radius:30px;display:block}
+      .x-gl .x-fallback{position:fixed;left:0;bottom:0;width:2px;height:2px;opacity:.01;pointer-events:none;padding:0;box-shadow:none}
+      .x-hero__copy{position:absolute;z-index:2;left:var(--gutter);bottom:40px;max-width:340px}
+      .x-hero__copy h1{font:var(--type-heading);margin:0 0 8px;color:var(--x-ink)}
+      .x-hero__copy p{font:var(--type-small);color:var(--x-ink2);margin:0 0 16px}
+      .x-hero__side{position:absolute;z-index:2;right:var(--gutter);bottom:40px;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+      .x-hero__tag{position:absolute;z-index:2;top:88px;left:var(--gutter);font:var(--type-tag);font-family:var(--x-px);text-transform:uppercase;color:var(--x-ink2)}
+      .x-hero__tag b{color:var(--x-or-ink)}
+      .x-sound{background:var(--x-ink);color:#fff;border-color:var(--x-ink)}
+      @media (max-width:760px){.x-hero{align-items:start;padding-top:120px;min-height:860px}.x-hero__word{place-items:start center;padding-top:180px}.x-hero__copy{right:var(--gutter);max-width:none;bottom:28px}.x-hero__side{left:var(--gutter);right:auto;align-items:flex-start;bottom:200px}}
+      /* creator band */
+      .x-band{background:var(--x-ink);color:#fff;margin-top:64px}
+      .x-band__in{max-width:var(--page-max);margin:0 auto;padding:72px var(--gutter);display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+      .x-band img{width:clamp(140px,22vw,240px);aspect-ratio:1;object-fit:cover;border-radius:50%}
+      .x-band h2{font-size:clamp(30px,5.5vw,72px);overflow-wrap:anywhere;margin:12px 0 8px;color:#fff}
+      .x-band p{font:var(--type-body);color:rgba(255,255,255,.72);margin:0 0 20px}
+      .x-badge{display:inline-block;font:var(--type-tag);font-family:var(--x-px);background:var(--x-or);color:var(--x-ink);padding:6px 12px;border-radius:var(--r-pill)}
+      @media (max-width:640px){.x-band__in{grid-template-columns:1fr}}
+      /* shop */
+      .x-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+      .x-tab{min-height:var(--tap);padding:0 16px;border-radius:var(--r-pill);border:1px solid var(--x-line);background:#fff;color:var(--x-ink);font:var(--type-label);cursor:pointer}
+      .x-tab[aria-pressed="true"]{background:var(--x-ink);color:#fff;border-color:var(--x-ink)}
+      .x-count{font:var(--type-small);color:var(--x-ink2);margin:0 0 24px}
+      .x-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+      .x-card{background:#fff;border-radius:var(--r-l);padding:20px;display:flex;flex-direction:column;border:1px solid var(--x-line);transition:transform var(--dur-quick) var(--ease-out),box-shadow var(--dur-quick)}
+      .x-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(0,0,0,.35)}
+      .x-card[hidden]{display:none}
+      .x-book{margin:0 0 20px;padding:18px 0 10px;background:var(--x-bg);border-radius:var(--r-m);perspective:900px;display:grid;place-items:center}
+      .x-book span{position:relative;display:block;width:62%;aspect-ratio:3/4;transform:rotateY(-24deg) rotateX(4deg);transform-style:preserve-3d;transition:transform .5s var(--ease-out);box-shadow:16px 18px 24px -10px rgba(0,0,0,.4)}
+      .x-book span::before{content:"";position:absolute;top:0;left:0;width:14px;height:100%;background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(255,255,255,.15) 60%,transparent);z-index:1;border-radius:3px 0 0 3px}
+      .x-book span::after{content:"";position:absolute;top:2%;right:-10px;width:10px;height:96%;background:repeating-linear-gradient(0deg,#fff 0 2px,#e6e3dc 2px 3px);transform:rotateY(70deg);transform-origin:left}
+      .x-book img{width:100%;height:100%;object-fit:cover;border-radius:3px 6px 6px 3px;display:block}
+      .x-card:hover .x-book span{transform:rotateY(-6deg) rotateX(0)}
+      .x-card__meta{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+      .x-type{font:var(--type-tag);color:var(--x-ink2);text-transform:uppercase;letter-spacing:.04em}
+      .x-price{font-family:var(--x-px);font-weight:800;font-size:18px;color:var(--x-ink)}
+      .x-card h3{font:var(--type-label);font-weight:var(--weight-bold);margin:0 0 6px;color:var(--x-ink)}
+      .x-card p{font:var(--type-small);color:var(--x-ink2);margin:0 0 16px;flex:1}
+      .x-card .x-btn{justify-content:center}
+      /* players */
+      .x-players{display:flex;gap:24px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;margin:0 calc(var(--gutter)*-1);padding:28px var(--gutter) 56px;scroll-padding:0 var(--gutter);scrollbar-width:thin}
+      /* 3D card system: wrapper = perspective, .x-3d = the physical object */
+      .x-pc,.x-cc{--x:0;--y:0;--a:0;--c:0;--m:18;position:relative;perspective:1000px}
+      .x-pc{flex:0 0 clamp(210px,64vw,240px);scroll-snap-align:center}
+      .x-3d{position:relative;transform-style:preserve-3d;transform:translateZ(calc(var(--a)*16px)) rotateY(calc(var(--c)*1deg + var(--x)*var(--m)*1deg)) rotateX(calc(var(--y)*var(--m)*-1deg));will-change:transform}
+      .x-edge{position:absolute;inset:0;border-radius:var(--r-l);background:#3a1708;box-shadow:inset 0 0 0 1px rgba(255,90,31,.25);pointer-events:none}
+      .x-edge:nth-child(2){background:#2a1006}
+      .x-gloss{position:absolute;left:-50%;top:-50%;width:200%;height:200%;z-index:2;background:radial-gradient(circle,rgba(255,255,255,.55),rgba(255,255,255,.12) 20%,rgba(255,255,255,0) 42%);mix-blend-mode:screen;opacity:calc(.3 + var(--a)*.7);transform:translate(calc(var(--x)*28%),calc(var(--y)*28%));pointer-events:none}
+      .x-floor{position:absolute;left:8%;right:8%;bottom:-30px;height:34px;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.42),rgba(0,0,0,0));transform:translate(calc(var(--x)*-22px),calc(var(--y)*-8px)) scale(calc(1 - var(--a)*.08));pointer-events:none}
+      .x-ring{--z:0px;position:relative;display:inline-block;flex:none;padding:3px;border-radius:50%;background:linear-gradient(145deg,var(--x-or),#8a300a 50%,#111);box-shadow:0 10px 18px -8px rgba(0,0,0,.7);animation:x-float 4s ease-in-out infinite;transform:translateZ(var(--z))}
+      .x-ring::after{content:"";position:absolute;inset:3px;border-radius:50%;box-shadow:inset 0 4px 9px rgba(0,0,0,.6),inset 0 -2px 4px rgba(255,255,255,.2);pointer-events:none}
+      .x-ring img{display:block;border-radius:50%;object-fit:cover;border:0}
+      @keyframes x-float{50%{transform:translateZ(var(--z)) translateY(-4px)}}
+      .x-pc__media{position:relative;aspect-ratio:9/16;border-radius:var(--r-l);overflow:hidden;background:#111;transform:translateZ(0)}
+      .x-pc__media video{width:100%;height:100%;object-fit:cover;display:block}
+      .x-pc__media::after{content:"";position:absolute;inset:auto 0 0;height:60%;z-index:1;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.85));pointer-events:none}
+      .x-pc__ui{position:absolute;left:12px;right:12px;bottom:12px;transform-style:preserve-3d;transform:translateZ(44px)}
+      .x-pc__who{position:relative;display:flex;gap:10px;align-items:center;color:#fff;background:rgba(17,17,17,.72);padding:6px 10px 6px 6px;border-radius:var(--r-pill);text-shadow:0 1px 2px rgba(0,0,0,.6);transform-style:preserve-3d;transform:translateZ(12px)}
+      .x-pc__who>div{min-width:0}
+      .x-pc__who .x-ring{--z:10px}
+      .x-pc__who img{width:44px;height:44px}
+      .x-pc__who h3{font:var(--type-label);font-weight:var(--weight-bold);margin:0;color:#fff}
+      .x-pc__who p{font:var(--type-caption);margin:0;color:rgba(255,255,255,.85)}
+      .x-snd{position:absolute;top:10px;right:10px;z-index:3;width:var(--tap);height:var(--tap);border-radius:50%;border:0;background:rgba(0,0,0,.55);color:#fff;font-size:18px;cursor:pointer;transform:translateZ(60px)}
+      .x-snd[aria-pressed="true"]{background:var(--x-or)}
+      .x-pc .x-btns{margin-top:12px;gap:6px}
+      .x-pc .x-btn{flex:1;justify-content:center;padding:0 8px;gap:6px}
+      .x-pc__ui .x-btn:not(.x-btn--ink){background:#fff;border-color:#fff;color:var(--x-ink)}
+      .x-pc__ui .x-btn--ink{border-color:rgba(255,255,255,.35)}
+      /* Criador card */
+      .x-band__in.x-cc{display:block;--m:12}
+      .x-cc .x-edge{border-radius:var(--r-xl)}
+      .x-cc__in{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;padding:clamp(24px,5vw,48px)}
+      .x-cc__face{position:absolute;inset:0;border-radius:var(--r-xl);overflow:hidden;background:linear-gradient(135deg,#262626,#141414);border:1px solid rgba(255,90,31,.35);transform:translateZ(0)}
+      .x-cc__in>.x-ring{--z:60px;padding:6px}
+      .x-cc__txt{transform-style:preserve-3d;transform:translateZ(40px);min-width:0}
+      .x-cc__txt .x-btns{transform:translateZ(20px)}
+      .x-cc .x-floor{bottom:42px}
+      @media (max-width:640px){.x-cc__in{grid-template-columns:1fr}}
+      /* community */
+      .x-join{background:var(--x-or);border-radius:var(--r-xl);padding:40px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;text-decoration:none;color:var(--x-ink);transition:transform var(--dur-quick) var(--ease-out)}
+      .x-join:hover{transform:scale(1.01)}
+      .x-join b{font-family:var(--x-px);font-weight:800;font-size:clamp(22px,3.6vw,44px);line-height:.95;text-transform:uppercase;max-width:16ch}
+      .x-join span{font:var(--type-body);font-weight:var(--weight-bold);display:inline-flex;align-items:center;gap:8px;background:var(--x-ink);color:#fff;border-radius:var(--r-pill);padding:0 22px;min-height:52px}
+      .x-chips{list-style:none;padding:0;margin:24px 0 0;display:flex;flex-wrap:wrap;gap:10px}
+      .x-chips a{display:inline-flex;align-items:center;gap:8px;min-height:var(--tap);padding:0 16px;border-radius:var(--r-pill);background:#fff;border:1px solid var(--x-line);color:var(--x-ink);text-decoration:none;font:var(--type-label)}
+      .x-chips a::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--fill-system-green)}
+      .x-chips a:hover{border-color:var(--x-ink)}
+      /* faq */
+      .x-faq{border-top:1px solid var(--x-ink)}
+      .x-faq details{border-bottom:1px solid var(--x-ink)}
+      .x-faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:72px;font:var(--type-heading);color:var(--x-ink)}
+      .x-faq summary::-webkit-details-marker{display:none}
+      .x-faq summary::after{content:"+";font-family:var(--x-px);font-size:32px;color:var(--x-or-ink);transition:transform var(--dur-quick)}
+      .x-faq details[open] summary::after{transform:rotate(45deg)}
+      .x-faq p{font:var(--type-body);color:var(--x-ink2);margin:0 0 24px;max-width:60ch}
+      /* steps */
+      .x-steps{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+      .x-steps li{background:#fff;border:1px solid var(--x-line);border-radius:var(--r-l);padding:28px}
+      .x-steps i{font-style:normal;display:block;font-size:56px;color:var(--x-or-ink);margin-bottom:20px}
+      .x-steps h3{font:var(--type-heading);margin:0 0 6px;color:var(--x-ink)}
+      .x-steps p{font:var(--type-body);color:var(--x-ink2);margin:0}
+      /* footer */
+      .x-endword{margin:96px 0 0;text-align:center;font-size:clamp(44px,14vw,220px);color:var(--x-ink);white-space:nowrap;overflow:hidden}
+      .x-footp{color:var(--x-ink2)}
+      .x-credit{color:var(--x-ink);font-weight:var(--weight-bold);display:inline-flex;align-items:center;min-height:var(--tap);min-width:var(--tap)}
+      @media (prefers-reduced-motion:reduce){.x-book span,.x-card{transition:none}.x-ring{animation:none}}
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="x-i-tt" viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.7 5.7 0 1 0 4.9 5.7V9.1a7.3 7.3 0 0 0 4.3 1.4V7.4a4.3 4.3 0 0 1-3.2-1.6z"/></symbol>
+      <symbol id="x-i-wa" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></symbol>
+    </svg>
+    <div class="page x-site" id="top">
+      <canvas id="x-stage" aria-hidden="true"></canvas>
+      <button class="x-btn x-sound x-sound2" id="x-sound2" type="button" aria-pressed="false" aria-label="Som do vídeo da SHELBY">🔇</button>
+      <header class="nav glass" data-auto></header>
+      <main class="main">
+        <section class="x-hero" id="hero" aria-label="SHELBY — Loja Digital">
+          <p class="x-hero__word x-px" aria-hidden="true"><span>SHELBY</span></p>
+          <div class="x-fallback">
+            <video id="x-hv" src="shelby-video.mp4" poster="shelby-video-poster.jpg" muted autoplay loop playsinline preload="auto" aria-label="Edit Free Fire MZ de @shelby.mz"></video>
+          </div>
+          <p class="x-hero__tag"><b>●</b> Loja digital · Moçambique</p>
+          <div class="x-hero__copy">
+            <h1>SHELBY — Loja Digital</h1>
+            <p>Sensi, edits e marketing. Paga por M-Pesa ou e-Mola. 11 produtos.</p>
+            <div class="x-btns">
+              <a class="x-btn x-btn--or" href="#loja">Ver loja ↓</a>
+              <a class="x-btn" href="#comunidade">Entrar na comunidade</a>
+            </div>
+          </div>
+          <div class="x-hero__side">
+            <button class="x-btn x-sound" id="x-sound" type="button" aria-pressed="false">🔊 Toca para ouvir</button>
+          </div>
+        </section>
 
-  <dialog class="app-dialog" id="auth-dialog" aria-labelledby="auth-title"><div class="dialog-inner"><div class="dialog-head"><div><h2 id="auth-title">A tua conta S H E L B Y</h2><p id="auth-intro">Entra ou cria uma conta para continuar.</p></div><button class="close-dialog" type="button" aria-label="Fechar" onclick="closeDialog('auth-dialog')">×</button></div><div id="account-profile" hidden><div class="dialog-user" id="account-email"></div><div class="dialog-actions"><button class="btn-secondary" type="button" id="sign-out-button">Sair da conta</button></div></div><form id="auth-form"><div class="dialog-fields"><div class="field"><label for="auth-email">E-mail</label><input id="auth-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="teu@email.com"></div><div class="field"><label for="auth-password">Palavra-passe</label><input id="auth-password" name="password" type="password" autocomplete="current-password" required minlength="8" placeholder="Pelo menos 8 caracteres"></div></div><div class="dialog-actions"><button class="btn" id="auth-submit" type="submit">Entrar</button><button class="btn-secondary" id="auth-toggle" type="button">Criar conta</button></div><p class="dialog-note">Usa um e-mail teu. Se a confirmação por e-mail estiver ativa, abre a mensagem enviada pelo Supabase antes de fazer login.</p></form><div class="dialog-status" id="auth-status" role="status" aria-live="polite"></div></div></dialog>
-  <dialog class="app-dialog" id="checkout-dialog" aria-labelledby="checkout-title"><div class="dialog-inner"><div class="dialog-head"><div><h2 id="checkout-title">Plano Pro</h2><p>Pagamento seguro em Moçambique</p></div><button class="close-dialog" type="button" aria-label="Fechar" onclick="closeDialog('checkout-dialog')">×</button></div><form id="checkout-form"><div class="dialog-fields"><div class="field"><label for="payment-method">Método de pagamento</label><select id="payment-method" required><option value="MPESA">M-Pesa</option><option value="EMOLA">e-Mola</option></select></div><div class="field"><label for="payer-phone">Número associado à carteira móvel</label><input id="payer-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="Ex.: 84 123 4567" required></div></div><p class="dialog-note" id="checkout-price">O plano tem duração de 30 dias. Confirma o pedido no telefone quando receberes a solicitação. A página não ativa o acesso enquanto o pagamento estiver pendente.</p><div class="dialog-actions"><button class="btn" id="checkout-submit" type="submit">Continuar para pagamento</button><button class="btn-secondary" id="resume-payment-button" type="button" hidden>Consultar pedido pendente</button></div></form><div class="dialog-status" id="checkout-status" role="status" aria-live="polite"></div></div></dialog>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script>
-    const contentMain=document.querySelector('main');
-    const howSection=document.querySelector('#como-funciona'),playersSection=document.querySelector('#jogadores'),generatorSection=document.querySelector('#gerador'),shopSection=document.querySelector('#loja'),plansSection=document.querySelector('#planos');
-    contentMain.insertBefore(howSection,playersSection);
-    contentMain.insertBefore(plansSection,playersSection);
-    contentMain.insertBefore(generatorSection,shopSection);
-    const SUPABASE_URL = "https://dflvklhnozxifhvnbzud.supabase.co";
-    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_nvkcNmGdGes1rE55C1tpYg_Gr3WOOaP";
-    const SESSION_KEY = 'shelby_supabase_session';
-    let currentSession = null;
-    let refreshInFlight = null;
-    function pendingReferenceKey() { return 'shelby_pending_reference_' + (currentSession?.user?.id || 'unknown'); }
-    async function supabaseFetch(path, { method='GET', body, token }={}) {
-      const headers = { apikey: SUPABASE_PUBLISHABLE_KEY };
-      if (body !== undefined) headers['Content-Type'] = 'application/json';
-      if (token) headers.Authorization = 'Bearer ' + token;
-      const response = await fetch(SUPABASE_URL + path, { method, headers, body: body === undefined ? undefined : JSON.stringify(body) });
-      const text = await response.text(); let data = null; try { data = text ? JSON.parse(text) : null; } catch {}
-      if (!response.ok) throw Object.assign(new Error(data?.msg || data?.message || data?.error_description || data?.error || 'Pedido recusado pelo Supabase.'), { status: response.status, code: data?.code });
-      return data;
-    }
-    function storeSession(session) {
-      if (session?.access_token) {
-        session.expires_at = session.expires_at || Math.floor(Date.now()/1000) + Number(session.expires_in || 3600);
-        currentSession = session; localStorage.setItem(SESSION_KEY, JSON.stringify(session));
-      } else { currentSession = null; localStorage.removeItem(SESSION_KEY); }
-      updateSession(currentSession);
-    }
-    async function ensureSession() {
-      if (!currentSession) { try { currentSession = JSON.parse(localStorage.getItem(SESSION_KEY) || 'null'); } catch { currentSession = null; } }
-      if (currentSession?.access_token && Number(currentSession.expires_at || 0) > Math.floor(Date.now()/1000) + 60) return currentSession;
-      if (currentSession?.refresh_token) {
-        if (!refreshInFlight) refreshInFlight = (async()=>{const refreshed=await supabaseFetch('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:{refresh_token:currentSession.refresh_token}});storeSession(refreshed);return currentSession;})();
-        try { return await refreshInFlight; } catch { storeSession(null); } finally { refreshInFlight=null; }
-      }
-      throw Object.assign(new Error('A sessão expirou. Entra novamente.'), { status:401 });
-    }
-    async function invokeFunction(name, body) {
-      const session = await ensureSession();
-      const response = await fetch(SUPABASE_URL + '/functions/v1/' + name, { method:'POST', headers:{ apikey:SUPABASE_PUBLISHABLE_KEY, Authorization:'Bearer '+session.access_token, 'Content-Type':'application/json' }, body:JSON.stringify(body) });
-      const text=await response.text();let data=null;try{data=text?JSON.parse(text):null;}catch{}
-      if(!response.ok)throw Object.assign(new Error(data?.message||data?.error||'O servidor recusou o pedido.'),{context:{status:response.status},data});
-      return {data};
-    }
-    const base={balanced:[92,86,79,68,43,72],rush:[96,91,84,73,48,77],precision:[82,76,72,63,38,66]};
-    const form=document.querySelector('#sensi-form');
-    const generatedKey='shelby_normal_generated';
-    if(localStorage.getItem(generatedKey)==='yes'){
-      form.querySelector('button[type="submit"]').disabled=true;
-      form.querySelector('button[type="submit"]').textContent='Oferta grátis já utilizada';
-      form.insertAdjacentHTML('beforeend','<p class="result-note">A geração grátis já foi usada neste navegador. O teu resultado anterior não é guardado.</p>');
-    }
-    form.addEventListener('submit',e=>{e.preventDefault();if(localStorage.getItem(generatedKey)==='yes')return;const device=document.querySelector('#device').value,style=document.querySelector('#style').value,experience=document.querySelector('#experience').value;let vals=[...base[style]];const deviceShift={balanced:0,entry:-5,mid:0,flagship:4}[device]||0;const expShift={new:-3,some:0,advanced:4}[experience]||0;vals=vals.map((v,i)=>Math.max(20,Math.min(100,v+deviceShift+expShift-(i>3?Math.round(deviceShift/2):0))));const shootButton={entry:'50–55%',mid:'45–55%',flagship:'40–50%',balanced:'45–55%'}[device];const dpi={entry:'Mantém o DPI atual',mid:'Mantém o DPI atual',flagship:'Mantém o DPI atual',balanced:'Mantém o DPI atual'}[device];const labels=['Geral','Ponto vermelho','Mira 2×','Mira 4×','AWM','Olhadinha','Botão de tiro','DPI'];const extras=[...vals,shootButton,dpi];document.querySelector('#result-grid').innerHTML=labels.map((l,i)=>`<div class="result-cell"><small>${l}</small><b>${extras[i]}</b></div>`).join('');const box=document.querySelector('#result');box.classList.add('show');localStorage.setItem(generatedKey,'yes');form.querySelector('button[type="submit"]').disabled=true;form.querySelector('button[type="submit"]').textContent='Oferta grátis já utilizada';box.scrollIntoView({behavior:'smooth',block:'nearest'});});
-    let toastTimer;
-    let pendingPlan = null;
-    let checkoutPlan = null;
-    let requestKey = null;
-    let busyPayment = false;
-    const authDialog = document.querySelector('#auth-dialog');
-    const checkoutDialog = document.querySelector('#checkout-dialog');
-    const authForm = document.querySelector('#auth-form');
-    const authStatus = document.querySelector('#auth-status');
-    const checkoutForm = document.querySelector('#checkout-form');
-    const checkoutStatus = document.querySelector('#checkout-status');
-    const accountProfile = document.querySelector('#account-profile');
-    const authToggle = document.querySelector('#auth-toggle');
-    let selectedPlayer = null;
-    const pendingPlayerKey = 'shelby_pending_generator_player';
-    const confirmedAccessKey = 'shelby_confirmed_plan_access';
-    function getPendingPlayer(){try{return JSON.parse(localStorage.getItem(pendingPlayerKey)||'null')}catch{return null}}
-    function hasActivePlan(){try{const access=JSON.parse(localStorage.getItem(confirmedAccessKey)||'null');return !!(currentSession?.user?.id&&access?.userId===currentSession.user.id&&['pro','vip'].includes(access.plan)&&new Date(access.expiresAt).getTime()>Date.now())}catch{return false}}
-    function updatePlanIndicator(){const node=document.querySelector('#plan-current');if(!node)return;let access=null;try{access=JSON.parse(localStorage.getItem(confirmedAccessKey)||'null')}catch{};const active=currentSession?.user?.id&&access?.userId===currentSession.user.id&&['pro','vip'].includes(access?.plan)&&Number.isFinite(Date.parse(access?.expiresAt))&&Date.parse(access.expiresAt)>Date.now();node.hidden=!active;if(active){const label=access.plan.toUpperCase();node.innerHTML='<span class="plan-current-dot" aria-hidden="true"></span><span>Plano atual: <b>'+label+'</b> · ativo até <b>'+new Date(access.expiresAt).toLocaleDateString("pt-MZ")+'</b></span>'}}
-    function rememberConfirmedAccess(access){if(access&&currentSession?.user?.id&&['pro','vip'].includes(access.plan_slug)&&new Date(access.expires_at).getTime()>Date.now())localStorage.setItem(confirmedAccessKey,JSON.stringify({userId:currentSession.user.id,plan:access.plan_slug,expiresAt:access.expires_at}));updatePlanIndicator()}
-    function setPlayerContext(player){const node=document.querySelector('#selected-player-label');if(!player){node.classList.remove('show');node.textContent='';return}node.textContent='Gerador iniciado a partir do perfil de '+player.name+' ('+player.handle+'). A sugestão é calculada pelas tuas escolhas; não é uma configuração oficial do criador.';node.classList.add('show')}
-    function activatePendingPlayerGenerator(){const player=getPendingPlayer();if(!player)return;document.querySelector("#selected-player-plan").hidden=true;selectedPlayer=player;localStorage.removeItem(pendingPlayerKey);setPlayerContext(player);localStorage.removeItem(generatedKey);const submit=form.querySelector('button[type="submit"]');submit.disabled=false;submit.textContent='Gerar sensibilidade para '+player.name;document.querySelector('#result .result-head').innerHTML='Sugestão de partida · '+player.name+' <span>Plano ativo</span>';closeDialog('checkout-dialog');document.querySelector('#gerador').scrollIntoView({behavior:'smooth'});notify('Acesso confirmado. O gerador do perfil '+player.name+' está pronto.');}
-    function startPlayerPurchase(card){selectedPlayer={name:card.querySelector('h3').textContent.trim(),handle:card.querySelector('.player-info p').textContent.trim()};localStorage.setItem(pendingPlayerKey,JSON.stringify(selectedPlayer));if(hasActivePlan()){activatePendingPlayerGenerator();return}const notice=document.querySelector('#selected-player-plan');notice.textContent='Sensi selecionada: '+selectedPlayer.name+' ('+selectedPlayer.handle+'). Escolhe Pro ou VIP para continuar para o pagamento.';notice.hidden=false;document.querySelector('#planos').scrollIntoView({behavior:'smooth'})}
-    document.querySelectorAll('.player-card').forEach(card=>{const select=document.createElement('button');select.type='button';select.className='player-select';const name=card.querySelector('h3').textContent.trim();select.textContent='Comprar sensi do '+name;select.setAttribute('aria-label','Comprar sensibilidade de '+name);select.addEventListener('click',()=>startPlayerPurchase(card));card.querySelector('.player-info').append(select);card.addEventListener('pointermove',event=>{if(event.pointerType==='touch'||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const r=card.getBoundingClientRect(),x=(event.clientX-r.left)/r.width-.5,y=(event.clientY-r.top)/r.height-.5;card.style.setProperty('--ry',(x*5).toFixed(2)+'deg');card.style.setProperty('--rx',(-y*4).toFixed(2)+'deg')});card.addEventListener('pointerleave',()=>{card.style.setProperty('--rx','0deg');card.style.setProperty('--ry','0deg')})});
-    const playerSearch=document.querySelector('#player-search');
-    playerSearch.addEventListener('input',()=>{const term=playerSearch.value.trim().toLocaleLowerCase('pt-MZ');let visible=0;document.querySelectorAll('.player-group').forEach(group=>{let groupVisible=0;group.querySelectorAll('.player-card').forEach(card=>{const match=card.textContent.toLocaleLowerCase('pt-MZ').includes(term);card.hidden=!match;if(match){visible++;groupVisible++}});group.hidden=groupVisible===0});document.querySelector('#player-count').textContent=term?visible+' resultado'+(visible===1?'':'s'):'11 perfis'});
-    let authMode = 'signin';
-    function setStatus(node, message, tone='') { node.textContent = message; node.className = 'dialog-status' + (tone ? ' ' + tone : ''); }
-    function notify(message) { const toast=document.querySelector('#toast'); toast.textContent=message; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>toast.classList.remove('show'),3500); }
-    function closeDialog(id) { document.getElementById(id)?.close(); }
-    function setAuthMode(mode) { authMode=mode; document.querySelector('#auth-title').textContent=mode==='signup'?'Criar conta S H E L B Y':'A tua conta S H E L B Y'; document.querySelector('#auth-intro').textContent=mode==='signup'?'Regista-te para comprar e guardar o teu acesso.':'Entra para continuar com a tua compra.'; document.querySelector('#auth-submit').textContent=mode==='signup'?'Criar conta':'Entrar'; authToggle.textContent=mode==='signup'?'Já tenho conta':'Criar conta'; document.querySelector('#auth-password').autocomplete=mode==='signup'?'new-password':'current-password'; }
-    function openAccount() { setStatus(authStatus,''); if(currentSession?.user){ document.querySelector('#account-email').textContent=currentSession.user.email || 'Conta autenticada'; authForm.hidden=true; accountProfile.hidden=false; document.querySelector('#auth-title').textContent='A tua conta'; document.querySelector('#auth-intro').textContent='Sessão ligada ao SensiLab.'; } else { authForm.hidden=false; accountProfile.hidden=true; setAuthMode('signin'); } if(!authDialog.open) authDialog.showModal(); }
-    function openCheckout(plan) { if(!['pro','vip'].includes(plan)) return; checkoutPlan=plan; requestKey=null; const selected=getPendingPlayer(); document.querySelector('#checkout-title').textContent='Plano '+(plan==='pro'?'Pro':'VIP')+(selected?' · '+selected.name:''); document.querySelector('#checkout-price').textContent=(plan==='pro'?'49':'99')+' MZN por 30 dias.'+(selected?' Pedido para a sensi de '+selected.name+'.':'')+' Confirma o pedido no telefone quando receberes a solicitação. O acesso só ativa após confirmação da Pagar.'; setStatus(checkoutStatus,''); document.querySelector('#resume-payment-button').hidden=!localStorage.getItem(pendingReferenceKey()); if(!currentSession){ pendingPlan=plan; localStorage.setItem('shelby_pending_plan',plan); openAccount(); setStatus(authStatus,'Entra ou cria uma conta; depois abrimos este pagamento.'); return; } if(!checkoutDialog.open) checkoutDialog.showModal(); }
-    window.openAccount=openAccount; window.openCheckout=openCheckout; window.closeDialog=closeDialog; window.useNormalPlan=()=>{if(getPendingPlayer()){notify('Para comprar a sensi de '+getPendingPlayer().name+', escolhe o plano Pro ou VIP.');return;}document.querySelector('#gerador').scrollIntoView({behavior:'smooth'});};
-    authToggle.addEventListener('click',()=>{setStatus(authStatus,'');setAuthMode(authMode==='signin'?'signup':'signin')});
-    authForm.addEventListener('submit',async e=>{e.preventDefault();const email=document.querySelector('#auth-email').value.trim();const password=document.querySelector('#auth-password').value;const submit=document.querySelector('#auth-submit');submit.disabled=true;setStatus(authStatus,authMode==='signup'?'A criar a conta…':'A entrar…');try{const result=authMode==='signup'?await supabaseFetch('/auth/v1/signup?redirect_to='+encodeURIComponent(location.origin),{method:'POST',body:{email,password}}):await supabaseFetch('/auth/v1/token?grant_type=password',{method:'POST',body:{email,password}});if(!result?.access_token){setStatus(authStatus,'Conta criada. Confirma o e-mail enviado pelo Supabase e depois entra aqui.','success');return;}storeSession(result);setStatus(authStatus,'Sessão iniciada com sucesso.','success');}catch(error){setStatus(authStatus,error?.message||'Não foi possível autenticar. Verifica os dados e tenta de novo.','error');}finally{submit.disabled=false;}});
-    document.querySelector('#sign-out-button').addEventListener('click',async()=>{try{const session=await ensureSession();await supabaseFetch('/auth/v1/logout',{method:'POST',token:session.access_token});storeSession(null);localStorage.removeItem(confirmedAccessKey);accountProfile.hidden=true;authForm.hidden=false;closeDialog('auth-dialog');notify('Sessão terminada.');}catch{storeSession(null);localStorage.removeItem(confirmedAccessKey);closeDialog('auth-dialog');notify('Sessão terminada.');}});
-    function updateSession(session) { currentSession=session; updatePlanIndicator(); const button=document.querySelector('#account-button'); button.textContent=session?.user?.email?session.user.email.split('@')[0]:'Entrar'; button.setAttribute('aria-label',session?.user?.email?'Conta '+session.user.email:'Entrar ou criar conta'); if(session?.user){const savedPlan=localStorage.getItem('shelby_pending_plan');if(savedPlan&&['pro','vip'].includes(savedPlan)){pendingPlan=savedPlan;localStorage.removeItem('shelby_pending_plan');closeDialog('auth-dialog');openCheckout(pendingPlan);pendingPlan=null;}} }
-    async function restoreAuth(){
-      const fragment=new URLSearchParams(location.hash.startsWith('#')?location.hash.slice(1):'');
-      const accessToken=fragment.get('access_token'),refreshToken=fragment.get('refresh_token');
-      if(accessToken&&refreshToken){try{const user=await supabaseFetch('/auth/v1/user',{token:accessToken});storeSession({access_token:accessToken,refresh_token:refreshToken,expires_at:Number(fragment.get('expires_at'))||Math.floor(Date.now()/1000)+Number(fragment.get('expires_in')||3600),user});history.replaceState(null,'',location.pathname+location.search);return;}catch{history.replaceState(null,'',location.pathname+location.search);}}
-      try{currentSession=JSON.parse(localStorage.getItem(SESSION_KEY)||'null');}catch{currentSession=null;}
-      updateSession(currentSession);
-      if(currentSession?.refresh_token&&Number(currentSession.expires_at||0)<Math.floor(Date.now()/1000)+90){try{await ensureSession();}catch{}}
-    }
-    restoreAuth();
-    document.addEventListener('visibilitychange',()=>{if(!document.hidden&&currentSession?.refresh_token&&Number(currentSession.expires_at||0)<Math.floor(Date.now()/1000)+90)ensureSession().catch(()=>{});});
-    function friendlyFunctionError(error) { const status=error?.context?.status; if(error?.data?.error==='payment_request_failed'){const diagnostic=typeof error.data.diagnostic==='string'&&/^[a-z0-9_]{1,80}$/i.test(error.data.diagnostic)?' Código: '+error.data.diagnostic+'.':'';const providerCode=typeof error.data.providerCode==='string'&&/^[a-z0-9_.-]{1,80}$/i.test(error.data.providerCode)?' Referência Pagar: '+error.data.providerCode+'.':'';const requestId=typeof error.data.requestId==='string'&&/^[A-Za-z0-9_.-]{1,100}$/.test(error.data.requestId)?' Pedido técnico: '+error.data.requestId+'.':'';return 'Não foi possível iniciar o pagamento. Não foi criado acesso; tenta novamente mais tarde.'+diagnostic+providerCode+requestId;} if(status===401)return 'A sessão expirou. Entra novamente e tenta de novo.'; if(status===400)return 'Confere o método e o número de telemóvel.'; return 'Não foi possível comunicar com o servidor. Verifica a ligação e tenta de novo.'; }
-    const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
-    async function queryPayment(reference){const {data}=await invokeFunction('pagar-payment-status',{reference});return data;}
-    document.querySelector('#resume-payment-button').addEventListener('click',async()=>{const reference=localStorage.getItem(pendingReferenceKey());if(!reference)return;const button=document.querySelector('#resume-payment-button');button.disabled=true;setStatus(checkoutStatus,'A consultar o último pedido…');try{const data=await queryPayment(reference);if(data?.order?.status==='paid'&&data?.access&&new Date(data.access.expires_at).getTime()>Date.now()){localStorage.removeItem(pendingReferenceKey());button.hidden=true;rememberConfirmedAccess(data.access);setStatus(checkoutStatus,'Pagamento confirmado. O plano '+(data.access.plan_slug==='vip'?'VIP':'Pro')+' está ativo até '+new Date(data.access.expires_at).toLocaleString('pt-MZ')+'.','success');activatePendingPlayerGenerator();}else if(['failed','cancelled'].includes(data?.order?.status)){localStorage.removeItem(pendingReferenceKey());button.hidden=true;setStatus(checkoutStatus,'O pedido terminou sem pagamento. Já podes iniciar outro.','error');}else{setStatus(checkoutStatus,'O pedido ainda está pendente. Confirma no telefone e consulta novamente daqui a pouco.');}}catch(error){setStatus(checkoutStatus,friendlyFunctionError(error),'error');}finally{button.disabled=false;}});
-    checkoutForm.addEventListener('submit',async e=>{e.preventDefault();if(busyPayment)return;if(!currentSession){closeDialog('checkout-dialog');openAccount();return;}const existingReference=localStorage.getItem(pendingReferenceKey());if(existingReference){setStatus(checkoutStatus,'Já existe um pedido pendente. Consulta o estado antes de iniciar outro.');document.querySelector('#resume-payment-button').hidden=false;return;}const payerPhone=document.querySelector('#payer-phone').value.trim();const method=document.querySelector('#payment-method').value;const submit=document.querySelector('#checkout-submit');busyPayment=true;submit.disabled=true;submit.textContent='A iniciar…';setStatus(checkoutStatus,'A iniciar o pedido de pagamento…');try{requestKey=requestKey||crypto.randomUUID();const {data}=await invokeFunction('create-pagar-payment',{plan:checkoutPlan,method,payerPhone,requestKey});if(!data?.reference)throw new Error('O servidor não devolveu a referência da encomenda.');localStorage.setItem(pendingReferenceKey(),data.reference);document.querySelector('#resume-payment-button').hidden=false;setStatus(checkoutStatus,'Pedido '+data.reference+' iniciado. Confirma a solicitação no teu telefone. O acesso continua pendente até a Pagar confirmar.');submit.textContent='A aguardar confirmação…';for(let attempt=0;attempt<60;attempt++){await sleep(5000);const statusData=await queryPayment(data.reference);const order=statusData?.order;if(order?.status==='paid'&&statusData?.access&&new Date(statusData.access.expires_at).getTime()>Date.now()){rememberConfirmedAccess(statusData.access);setStatus(checkoutStatus,'Pagamento confirmado. O plano '+(statusData.access.plan_slug==='vip'?'VIP':'Pro')+' está ativo até '+new Date(statusData.access.expires_at).toLocaleString('pt-MZ')+'.','success');localStorage.removeItem(pendingReferenceKey());document.querySelector('#resume-payment-button').hidden=true;requestKey=null;activatePendingPlayerGenerator();return;}if(order?.status==='paid'){setStatus(checkoutStatus,'Pagamento confirmado; a confirmação de acesso está a ser sincronizada. Vou consultar novamente.');continue;}if(['failed','cancelled','expired'].includes(order?.status)){setStatus(checkoutStatus,'Este pedido terminou sem confirmação. Podes iniciar outro pedido.','error');localStorage.removeItem(pendingReferenceKey());document.querySelector('#resume-payment-button').hidden=true;requestKey=null;return;}}setStatus(checkoutStatus,'Ainda sem confirmação. Se já aproveste no telefone, podes voltar mais tarde e usar ‘Consultar pedido pendente’. Não cries outro pedido enquanto este estiver pendente.');}catch(error){setStatus(checkoutStatus,friendlyFunctionError(error),'error');}finally{busyPayment=false;submit.disabled=false;submit.textContent='Tentar novamente';}});
-    let lastPhone='',lastMethod=''; checkoutForm.addEventListener('input',()=>{const phone=document.querySelector('#payer-phone').value.trim(),method=document.querySelector('#payment-method').value;if(phone!==lastPhone||method!==lastMethod){requestKey=null;lastPhone=phone;lastMethod=method;}});
+        <section class="x-band" id="criador" data-nav="Criador">
+          <div class="x-band__in x-cc">
+            <div class="x-cc__in x-3d">
+            <div class="x-cc__face"><span class="x-gloss"></span></div>
+            <span class="x-ring"><img src="shelby.jpg" alt="Foto de perfil de S H E L B Y" /></span>
+            <div class="x-cc__txt">
+              <span class="x-badge">CRIADOR OFICIAL</span>
+              <h2 class="x-px">S H E L B Y</h2>
+              <p>@shelby.mz · Sensi, edits e conteúdo Free Fire em Moçambique.</p>
+              <div class="x-btns">
+                <a class="x-btn x-btn--or" href="https://www.tiktok.com/@shelby.mz" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a>
+                <a class="x-btn x-btn--light" href="https://whatsapp.com/channel/0029Vb8PJKoHFxP5uQzP6m27" target="_blank" rel="noopener"><svg><use href="#x-i-wa"/></svg>Canal WhatsApp</a>
+              </div>
+            </div>
+            </div>
+          </div>
+        </section>
 
-  </script>
-</body>
+        <section class="x-sec" id="loja" data-nav="Loja">
+          <p class="x-k">// 01 Loja</p>
+          <h2 class="x-h2">Escolhe o teu produto</h2>
+          <p class="x-sub">Toca em Comprar para pagar no pagar.co.mz. O acesso chega depois da confirmação.</p>
+          <div class="x-tabs" role="toolbar" aria-label="Filtrar produtos">
+            <button class="x-tab" type="button" data-filter="all" aria-pressed="true">Todos</button>
+            <button class="x-tab" type="button" data-filter="ff" aria-pressed="false">Free Fire</button>
+            <button class="x-tab" type="button" data-filter="edit" aria-pressed="false">Edição de vídeo</button>
+            <button class="x-tab" type="button" data-filter="mkt" aria-pressed="false">Marketing</button>
+          </div>
+          <p class="x-count" aria-live="polite"><b id="x-count">15</b> produtos</p>
+          <div class="x-grid" id="x-grid">
+            <article class="x-card" data-cat="ff"><figure class="x-book"><span><img src="p03.jpg" alt="Capa do SHELBY Gerador de Sensibilidade" /></span></figure><div class="x-card__meta"><span class="x-type">Acesso privado</span><span class="x-price">49 MT</span></div><h3>Acesso ao SHELBY — Gerador de Sensibilidade</h3><p>Acesso ao site SHELBY para gerar configurações de sensibilidade para Free Fire.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/acesso-ao-shelby-gerador-de-sensibilidade-7ma862" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="ff"><figure class="x-book"><span><img src="p06.jpg" alt="Capa do Guia SHELBY VIP" /></span></figure><div class="x-card__meta"><span class="x-type">Ebook</span><span class="x-price">99 MT</span></div><h3>Guia SHELBY VIP: sensibilidade, DPI e acesso 30 dias</h3><p>Guia em PDF + acesso individual ao gerador SHELBY VIP por 30 dias.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/guia-shelby-vip-sensibilidade-dpi-e-acesso-30-di-8tnuyh" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="ff"><figure class="x-book"><span><img src="p07.jpg" alt="Capa do Guia SHELBY Pro" /></span></figure><div class="x-card__meta"><span class="x-type">Ebook</span><span class="x-price">49 MT</span></div><h3>Guia SHELBY Pro: sensibilidade, DPI e acesso 30 dias</h3><p>Método gradual de ajuste de sensibilidade, botão de tiro e DPI.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/shelby-pro-gerador-de-sensi-30-dias-boocbb" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="ff"><figure class="x-book"><span><img src="p13.jpg" alt="Capa do SENSI FF Tecno, Infinix e Poco" /></span></figure><div class="x-card__meta"><span class="x-type">Ebook</span><span class="x-price">38 MT</span></div><h3>SENSI FF — Tecno · Infinix · Poco Pack</h3><p>Sensibilidade + DPI + HUD para 32 aparelhos.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/sensi-ff-samsung-pack-tecno-infinix-poco-pack-800x3e" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="ff"><figure class="x-book"><span><img src="p14.jpg" alt="Capa do Guia de Sensibilidade Infinix e Tecno" /></span></figure><div class="x-card__meta"><span class="x-type">Ebook</span><span class="x-price">49 MT</span></div><h3>Guia de Sensibilidade Free Fire: Edição Infinix &amp; Tecno</h3><p>PULSE SENSI: feito para quem joga num Infinix ou Tecno.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/guia-de-sensibilidade-free-fire-edicao-infinix-t-u0dnyw" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="ff"><figure class="x-book"><span><img src="p15.jpg" alt="Capa do SENSI FF Samsung Pack" /></span></figure><div class="x-card__meta"><span class="x-type">Ebook</span><span class="x-price">29 MT</span></div><h3>SENSI FF — Samsung Pack | Galaxy A03 até S24</h3><p>Configurações por modelo Galaxy A e S, DPI, HUD 2/3/4 dedos.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/sensi-ff-samsung-pack-galaxy-a03-ate-s24-97wh88" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="ff"><figure class="x-book"><span><img src="p16.jpg" alt="Capa do SENSI FF Redmi Pack" /></span></figure><div class="x-card__meta"><span class="x-type">Ebook</span><span class="x-price">27 MT</span></div><h3>SENSI FF — Redmi Pack</h3><p>Sensibilidade, DPI e HUD para vários Redmi e Redmi Note.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/sensi-ff-redmi-pack-sensibilidade-dpi-hud-e-conf-hcznl4" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="ff"><figure class="x-book"><span><img src="p17.jpg" alt="Capa do SENSI FF iPhone Pack" /></span></figure><div class="x-card__meta"><span class="x-type">Ebook</span><span class="x-price">47 MT</span></div><h3>SENSI FF — iPhone Pack | iPhone 8 Plus ao 16 Pro Max</h3><p>Pack completo de sensibilidade para iPhone.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/sensi-ff-iphone-pack-do-iphone-8-plus-ao-16-pro--qte17g" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="edit"><figure class="x-book"><span><img src="p19.jpg" alt="Capa de Clips para seus edits" /></span></figure><div class="x-card__meta"><span class="x-type">Ebook</span><span class="x-price">47 MT</span></div><h3>CLIPS PARA SEUS EDITS</h3><p>Clips prontos para os teus edits de Free Fire no CapCut.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/clips-para-seus-edits-0e9teq" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="edit"><figure class="x-book"><span><img src="p20.jpg" alt="Capa do curso CapCut Free Fire" /></span></figure><div class="x-card__meta"><span class="x-type">Curso</span><span class="x-price">56 MT</span></div><h3>CapCut Free Fire: Sincronização de Clips, Música &amp; SFX</h3><p>2 aulas práticas + clips, sons de armas e SFX. Sem PC.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/capcut-free-fire-sincronizacao-de-clips-musica-s-1kpbef" target="_blank" rel="noopener">Comprar</a></article>
+            <article class="x-card" data-cat="mkt"><figure class="x-book"><span><img src="p01.jpg" alt="Capa de Marketing Digital na Prática" /></span></figure><div class="x-card__meta"><span class="x-type">Templates</span><span class="x-price">149 MT</span></div><h3>Marketing Digital na Prática | eBook + Kit de Modelos</h3><p>eBook de 10 capítulos + 30 modelos de publicações.</p><a class="x-btn x-btn--or" href="https://pagar.co.mz/p/marketing-digital-na-pratica-ebook-kit-de-modelo-vj4kbh" target="_blank" rel="noopener">Comprar</a></article>
+          </div>
+        </section>
+
+        <section class="x-sec" id="jogadores" data-nav="Jogadores">
+          <p class="x-k">// 02 Jogadores</p>
+          <h2 class="x-h2">Jogadores &amp; influenciadores</h2>
+          <p class="x-sub">Perfis de Free Fire de Moçambique. Os vídeos tocam sem som; toca em 🔇 para ouvir.</p>
+          <div class="x-players">
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-hugo.mp4" poster="v-hugo.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de Hugo Mabote">🔇</button><div class="x-pc__who"><img src="hugo-mabote.jpg" alt="" /><div><h3>Hugo Mabote</h3><p>@hugomabote</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@hugomabote" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a><a class="x-btn" href="https://whatsapp.com/channel/0029Vb5vIP89Bb5s7belUy2C" target="_blank" rel="noopener"><svg><use href="#x-i-wa"/></svg>WhatsApp</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-henzoxs.mp4" poster="v-henzoxs.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de HenzoXs Oficial">🔇</button><div class="x-pc__who"><img src="henzoxs.jpg" alt="" /><div><h3>HenzoXs Oficial ✔️</h3><p>@henzoxs_oficial</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@henzoxs_oficial" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a><a class="x-btn" href="https://whatsapp.com/channel/0029Vb3ihDJ5kg7EUdjPFs3F" target="_blank" rel="noopener"><svg><use href="#x-i-wa"/></svg>WhatsApp</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-sakura.mp4" poster="v-sakura.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de SAKURA">🔇</button><div class="x-pc__who"><img src="sakura.jpg" alt="" /><div><h3>SAKURA 🩸ˣ</h3><p>@mii_sakura0</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@mii_sakura0" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a><a class="x-btn" href="https://whatsapp.com/channel/0029VbCmOX2AojYwuLLwyb1D" target="_blank" rel="noopener"><svg><use href="#x-i-wa"/></svg>WhatsApp</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-barbie.mp4" poster="v-barbie.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de Barbie FF">🔇</button><div class="x-pc__who"><img src="barbie.jpg" alt="" /><div><h3>Barbie FF 🇲🇿</h3><p>@barbieff.mz</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@barbieff.mz" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a><a class="x-btn" href="https://whatsapp.com/channel/0029Vb8PDiMGpLHLZBGSl92R" target="_blank" rel="noopener"><svg><use href="#x-i-wa"/></svg>WhatsApp</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-gumball.mp4" poster="v-gumball.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de Gumball MZ">🔇</button><div class="x-pc__who"><img src="gumball.jpg" alt="" /><div><h3>Gumball MZ 🇲🇿</h3><p>@gumball._mz</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@gumball._mz" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a><a class="x-btn" href="https://whatsapp.com/channel/0029VbCjRAt9Gv7YJDdnMV3w" target="_blank" rel="noopener"><svg><use href="#x-i-wa"/></svg>WhatsApp</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-nkuta.mp4" poster="v-nkuta.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de nkuta200k">🔇</button><div class="x-pc__who"><img src="nkuta.jpg" alt="" /><div><h3>nkuta200k</h3><p>@nkuta200k</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@nkuta200k" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-loudqueen.mp4" poster="v-loudqueen.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de LOUD QUEEN">🔇</button><div class="x-pc__who"><img src="loudqueen.jpg" alt="" /><div><h3>LOUD QUEEN</h3><p>@loudqueen999</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@loudqueen999" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-helton.mp4" poster="v-helton.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de Helton TV">🔇</button><div class="x-pc__who"><img src="helton.jpg" alt="" /><div><h3>Helton TV</h3><p>@helton.tv</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@helton.tv" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-pandora.mp4" poster="v-pandora.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de PANDORA">🔇</button><div class="x-pc__who"><img src="pandora.jpg" alt="" /><div><h3>PANDORA 💞</h3><p>@pandora_mz</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@pandora_mz" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a></div></div></article>
+            <article class="x-pc"><div class="x-pc__in"><div class="x-pc__media"><video src="v-califer.mp4" poster="v-califer.jpg" muted loop playsinline preload="none"></video><button class="x-snd" type="button" aria-pressed="false" aria-label="Som do vídeo de Califer gamer play">🔇</button><div class="x-pc__who"><img src="califer.jpg" alt="" /><div><h3>Califer gamer play 🎮 Otaku</h3><p>@califer.game.play</p></div></div></div><div class="x-btns"><a class="x-btn x-btn--ink" href="https://www.tiktok.com/@califer.game.play" target="_blank" rel="noopener"><svg><use href="#x-i-tt"/></svg>TikTok</a></div></div></article>
+          </div>
+        </section>
+
+        <section class="x-sec" id="comunidade" data-nav="Comunidade">
+          <p class="x-k">// 03 Comunidade</p>
+          <h2 class="x-h2">Comunidade WhatsApp</h2>
+          <p class="x-sub">Sensi, edits e novidades da loja, junto com os jogadores de Moçambique.</p>
+          <a class="x-join" href="https://chat.whatsapp.com/GUGtDQgVxcxKzvYcmPeYUB" target="_blank" rel="noopener"><b>Entrar no grupo da comunidade</b><span>Entrar agora →</span></a>
+          <ul class="x-chips" aria-label="Canais WhatsApp">
+            <li><a href="https://whatsapp.com/channel/0029Vb8PJKoHFxP5uQzP6m27" target="_blank" rel="noopener">S H E L B Y MZ ofc</a></li>
+            <li><a href="https://whatsapp.com/channel/0029VbCGwyf2phHQJXNcRD0S" target="_blank" rel="noopener">S H E L B Y QUEEN</a></li>
+            <li><a href="https://whatsapp.com/channel/0029VbCmOX2AojYwuLLwyb1D" target="_blank" rel="noopener">SAKURA 🩸ˣ</a></li>
+            <li><a href="https://whatsapp.com/channel/0029Vb8PDiMGpLHLZBGSl92R" target="_blank" rel="noopener">Barbie FF 🇲🇿</a></li>
+            <li><a href="https://whatsapp.com/channel/0029Vb5vIP89Bb5s7belUy2C" target="_blank" rel="noopener">Hugo Mabote</a></li>
+            <li><a href="https://whatsapp.com/channel/0029Vb3ihDJ5kg7EUdjPFs3F" target="_blank" rel="noopener">Henzo Xs oficial ✔️</a></li>
+            <li><a href="https://whatsapp.com/channel/0029VbCjRAt9Gv7YJDdnMV3w" target="_blank" rel="noopener">Gumball MZ 🇲🇿</a></li>
+            <li><a href="https://whatsapp.com/channel/0029Vb7CigD1dAw0ieBc1q33" target="_blank" rel="noopener">RNS SERVICES 🇲🇿</a></li>
+          </ul>
+        </section>
+
+        <section class="x-sec" id="faq" data-nav="Perguntas">
+          <p class="x-k">// 04 FAQ</p>
+          <h2 class="x-h2">Perguntas</h2>
+          <div class="x-faq">
+            <details><summary>Como pago?</summary><p>Toca em Comprar no produto e paga com M-Pesa ou e-Mola no pagar.co.mz. O pagamento é seguro.</p></details>
+            <details><summary>Quando recebo o acesso?</summary><p>Logo depois da confirmação do pagamento recebes o acesso digital ao produto.</p></details>
+            <details><summary>Funciona no meu telemóvel?</summary><p>Sim. Tudo é digital e abre no telemóvel, Android ou iPhone. Não precisas de PC.</p></details>
+            <details><summary>Posso partilhar com amigos?</summary><p>Não. O acesso é individual: cada pessoa compra o seu.</p></details>
+          </div>
+        </section>
+
+        <section class="x-sec" id="comprar" data-nav="Como comprar">
+          <p class="x-k">// 05 Como comprar</p>
+          <h2 class="x-h2">Três passos</h2>
+          <p class="x-sub">Tudo pelo telemóvel.</p>
+          <ol class="x-steps">
+            <li><i class="x-px">01</i><h3>Escolhe</h3><p>Escolhe o produto e toca em <b>Comprar</b>.</p></li>
+            <li><i class="x-px">02</i><h3>Paga</h3><p>Paga com <b>M-Pesa</b> ou <b>e-Mola</b> no pagar.co.mz.</p></li>
+            <li><i class="x-px">03</i><h3>Recebe</h3><p>Recebe o acesso digital depois da confirmação.</p></li>
+          </ol>
+        </section>
+        <p class="x-endword x-px" aria-hidden="true">SHELBY</p>
+      </main>
+      <footer class="foot">
+        <p class="x-footp">Criado por <a class="x-credit" href="https://www.tiktok.com/@shelby.mz" target="_blank" rel="noopener">S H E L B Y</a> · Pagamentos seguros via pagar.co.mz</p>
+        <nav aria-label="Voltar às secções" data-auto></nav>
+      </footer>
+    </div>
+    <script src="hark.js"></script>
+    <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+    <script>
+      (function () {
+        var rm = matchMedia("(prefers-reduced-motion: reduce)").matches, nop = function () {};
+        function play(v) { var p = v.play(); if (p) p.catch(nop); }
+        /* filters */
+        var tabs = document.querySelectorAll(".x-tab"), cards = document.querySelectorAll(".x-card");
+        tabs.forEach(function (t) {
+          t.addEventListener("click", function () {
+            var f = t.dataset.filter, n = 0;
+            tabs.forEach(function (b) { b.setAttribute("aria-pressed", b === t); });
+            cards.forEach(function (c) { var s = f === "all" || c.dataset.cat === f; c.hidden = !s; if (s) n++; });
+            document.getElementById("x-count").textContent = n;
+          });
+        });
+        /* hero sound */
+        var hv = document.getElementById("x-hv"), sb = document.getElementById("x-sound"), sb2 = document.getElementById("x-sound2");
+        function heroLabel() { sb.textContent = hv.muted ? "🔊 Toca para ouvir" : "🔇 Silenciar"; sb.setAttribute("aria-pressed", !hv.muted); sb2.textContent = hv.muted ? "🔇" : "🔊"; sb2.setAttribute("aria-pressed", !hv.muted); }
+        function toggleHero() { hv.muted = !hv.muted; if (!hv.muted) { muteAll(null); play(hv); } heroLabel(); }
+        sb.addEventListener("click", toggleHero); sb2.addEventListener("click", toggleHero);
+        var heroEl = document.getElementById("hero");
+        new IntersectionObserver(function (e) { sb2.classList.toggle("is-on", !e[0].isIntersecting); }, { threshold: 0.15 }).observe(heroEl);
+        play(hv);
+        addEventListener("pointerdown", function () { if (hv.paused) play(hv); }, { once: true });
+        /* players */
+        var pcs = [].slice.call(document.querySelectorAll(".x-pc"));
+        function muteAll(keep) {
+          pcs.forEach(function (c) { if (c === keep) return; var b = c.querySelector(".x-snd"); c.querySelector("video").muted = true; b.textContent = "🔇"; b.setAttribute("aria-pressed", "false"); });
+          if (keep && !hv.muted) { hv.muted = true; heroLabel(); }
+        }
+        pcs.forEach(function (c) {
+          var v = c.querySelector("video"), b = c.querySelector(".x-snd");
+          b.addEventListener("click", function () { var on = v.muted; muteAll(c); v.muted = !on; b.textContent = on ? "🔊" : "🔇"; b.setAttribute("aria-pressed", on); if (on) play(v); });
+          c.addEventListener("pointerenter", function () { play(v); });
+          c.addEventListener("pointerleave", function () { if (!c._vis || rm) v.pause(); });
+        });
+        var io = new IntersectionObserver(function (es) {
+          es.forEach(function (e) { var c = e.target, v = c.querySelector("video"); c._vis = e.isIntersecting; if (e.isIntersecting) { if (!rm) play(v); } else v.pause(); });
+        }, { threshold: 0.6 });
+        pcs.forEach(function (c) { io.observe(c); });
+
+        /* 3D cards: build layers, then spring tilt */
+        (function () {
+          var cards = [].slice.call(document.querySelectorAll(".x-pc,.x-cc")), row = document.querySelector(".x-players");
+          function el(cls, p, t) { var d = document.createElement(t || "div"); d.className = cls; d.setAttribute("aria-hidden", "true"); if (p) p.appendChild(d); return d; }
+          function cl(n) { return Math.max(-1, Math.min(1, n)); }
+          cards.forEach(function (c) {
+            var inn = c.querySelector(".x-pc__in,.x-cc__in");
+            inn.classList.add("x-3d");
+            if (c.classList.contains("x-pc")) {
+              var m = c.querySelector(".x-pc__media"), btns = inn.querySelector(".x-btns"), who = m.querySelector(".x-pc__who"), im = who.querySelector("img"), ring = el("x-ring", null, "span"), ui = document.createElement("div");
+              ring.removeAttribute("aria-hidden"); im.parentNode.insertBefore(ring, im); ring.appendChild(im);
+              ui.className = "x-pc__ui"; ui.appendChild(who); ui.appendChild(btns); inn.appendChild(ui);
+              inn.appendChild(m.querySelector(".x-snd")); el("x-gloss", m);
+            }
+            [14, 7].forEach(function (z) { var e = el("x-edge"); e.style.transform = "translateZ(-" + z + "px)"; inn.insertBefore(e, inn.firstChild); });
+            c.insertBefore(el("x-floor"), c.firstChild);
+            c._s = { x: 0, y: 0, a: 0, vx: 0, vy: 0, tx: 0, ty: 0, ta: 0, c: 0 };
+          });
+          if (rm) return;
+          var run = 0, dirty = 1, ori = null;
+          function kick() { if (!run) { run = 1; requestAnimationFrame(tick); } }
+          function aim(c, e) { var r = c.getBoundingClientRect(), s = c._s; s.tx = cl(((e.clientX - r.left) / r.width - 0.5) * 2); s.ty = cl(((e.clientY - r.top) / r.height - 0.5) * 2); s.ta = 1; kick(); }
+          function rest(c) { var s = c._s; s.tx = s.ty = s.ta = 0; kick(); }
+          cards.forEach(function (c) {
+            c.addEventListener("pointermove", function (e) { aim(c, e); });
+            c.addEventListener("pointerdown", function (e) { aim(c, e); });
+            c.addEventListener("pointerleave", function () { rest(c); });
+            c.addEventListener("pointercancel", function () { rest(c); });
+            c.addEventListener("pointerup", function (e) { if (e.pointerType !== "mouse") rest(c); });
+          });
+          if (row) row.addEventListener("scroll", function () { dirty = 1; kick(); }, { passive: true });
+          addEventListener("resize", function () { dirty = 1; kick(); });
+          addEventListener("deviceorientation", function (e) { if (e.gamma == null) return; ori = { x: cl(e.gamma / 30), y: cl((e.beta - 45) / 30) }; kick(); });
+          var DO = window.DeviceOrientationEvent;
+          if (DO && typeof DO.requestPermission === "function") addEventListener("touchend", function () { DO.requestPermission().catch(function () {}); }, { once: true });
+          function tick() {
+            var moving = 0;
+            if (dirty && row) {
+              dirty = 0; var rr = row.getBoundingClientRect(), mid = rr.left + rr.width / 2;
+              pcs.forEach(function (c) { var b = c.getBoundingClientRect(); c._s.c = -14 * cl((b.left + b.width / 2 - mid) / (rr.width / 2 + b.width)); });
+            }
+            cards.forEach(function (c) {
+              var s = c._s, tx = s.tx, ty = s.ty;
+              if (!s.ta && ori) { tx = ori.x * 0.6; ty = ori.y * 0.6; }
+              s.vx = (s.vx + (tx - s.x) * 0.1) * 0.8; s.vy = (s.vy + (ty - s.y) * 0.1) * 0.8;
+              s.x += s.vx; s.y += s.vy; s.a += (s.ta - s.a) * 0.12;
+              if (Math.abs(tx - s.x) + Math.abs(ty - s.y) + Math.abs(s.vx) + Math.abs(s.vy) + Math.abs(s.ta - s.a) > 0.002) moving = 1;
+              var st = c.style; st.setProperty("--x", s.x.toFixed(4)); st.setProperty("--y", s.y.toFixed(4)); st.setProperty("--a", s.a.toFixed(3)); st.setProperty("--c", s.c.toFixed(2));
+            });
+            if (moving) requestAnimationFrame(tick); else run = 0;
+          }
+          kick();
+        })();
+
+        /* 3D phone that travels with the scroll */
+        if (!window.THREE) return;
+        var hero = heroEl, cv = document.getElementById("x-stage"), R;
+        cv.classList.add("is-on");
+        try { R = new THREE.WebGLRenderer({ canvas: cv, antialias: true, alpha: true }); } catch (e) { cv.classList.remove("is-on"); return; }
+        R.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        R.outputColorSpace = THREE.SRGBColorSpace;
+        hero.classList.add("x-gl");
+        var S = new THREE.Scene(), C = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+        C.position.set(0, 0, 11);
+        S.add(new THREE.AmbientLight(0xffffff, 1.2));
+        var dl = new THREE.DirectionalLight(0xffffff, 2.4); dl.position.set(3, 4, 6); S.add(dl);
+        var ol = new THREE.PointLight(0xff5a1f, 40, 20); ol.position.set(-4, -2, 3); S.add(ol);
+        var W = 1.9, H = 3.9, sw = W - 0.14, sh = H - 0.14, ph = new THREE.Group();
+        function rr(w, h, r) {
+          var s = new THREE.Shape(), x = -w / 2, y = -h / 2;
+          s.moveTo(x + r, y); s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
+          s.lineTo(x + w, y + h - r); s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+          s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
+          s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y); return s;
+        }
+        var bg = new THREE.ExtrudeGeometry(rr(W, H, 0.3), { depth: 0.2, bevelEnabled: true, bevelThickness: 0.05, bevelSize: 0.05, bevelSegments: 4, curveSegments: 16 });
+        bg.center();
+        ph.add(new THREE.Mesh(bg, new THREE.MeshStandardMaterial({ color: 0x1b1b1b, metalness: 0.7, roughness: 0.3 })));
+        function scr(z, mat) {
+          var g = new THREE.ShapeGeometry(rr(sw, sh, 0.24), 16), p = g.attributes.position, u = g.attributes.uv;
+          for (var i = 0; i < p.count; i++) u.setXY(i, (p.getX(i) + sw / 2) / sw, (p.getY(i) + sh / 2) / sh);
+          var m = new THREE.Mesh(g, mat); m.position.z = z; ph.add(m);
+        }
+        var vt = new THREE.VideoTexture(hv); vt.colorSpace = THREE.SRGBColorSpace;
+        function fit() {
+          var va = (hv.videoWidth || 9) / (hv.videoHeight || 16), a = sw / sh;
+          if (va > a) { vt.repeat.set(a / va, 1); vt.offset.set((1 - a / va) / 2, 0); }
+          else { vt.repeat.set(1, va / a); vt.offset.set(0, (1 - va / a) / 2); }
+        }
+        fit(); hv.addEventListener("loadedmetadata", fit);
+        scr(0.152, new THREE.MeshBasicMaterial({ map: vt, toneMapped: false }));
+        /* TikTok overlay */
+        var oc = document.createElement("canvas"); oc.width = 540; oc.height = Math.round((540 * sh) / sw);
+        var ot = new THREE.CanvasTexture(oc); ot.colorSpace = THREE.SRGBColorSpace;
+        var av = document.querySelector(".x-band img");
+        var ICON = [
+          ["M12 21s-7-4.4-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.6 12 21 12 21z", "#fe2c55"],
+          ["M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H10l-5 4v-4H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z", "#fff"],
+          ["M14 4l8 8-8 8v-5c-6 0-9 2-12 6 1-7 5-11 12-12z", "#fff"]
+        ];
+        function draw() {
+          var g = oc.getContext("2d"), w = oc.width, h = oc.height, x = w - 62, y = h * 0.47;
+          g.clearRect(0, 0, w, h);
+          var gr = g.createLinearGradient(0, h * 0.55, 0, h); gr.addColorStop(0, "rgba(0,0,0,0)"); gr.addColorStop(1, "rgba(0,0,0,.72)");
+          g.fillStyle = gr; g.fillRect(0, h * 0.55, w, h * 0.45);
+          g.fillStyle = "#000"; g.beginPath(); g.roundRect ? g.roundRect(w / 2 - 60, 22, 120, 34, 17) : g.rect(w / 2 - 60, 22, 120, 34); g.fill();
+          g.save(); g.beginPath(); g.arc(x, y, 34, 0, 7); g.fillStyle = "#fff"; g.fill();
+          g.beginPath(); g.arc(x, y, 31, 0, 7); g.clip();
+          if (av.complete && av.naturalWidth) g.drawImage(av, x - 31, y - 31, 62, 62);
+          g.restore();
+          g.fillStyle = "#fe2c55"; g.beginPath(); g.arc(x, y + 34, 12, 0, 7); g.fill();
+          g.fillStyle = "#fff"; g.font = "bold 22px sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText("+", x, y + 33);
+          ICON.forEach(function (it, i) { g.save(); g.translate(x - 29, y + 80 + i * 100); g.scale(2.4, 2.4); g.fillStyle = it[1]; g.fill(new Path2D(it[0])); g.restore(); });
+          g.textAlign = "left"; g.textBaseline = "alphabetic"; g.fillStyle = "#fff";
+          g.font = "600 32px Geist, sans-serif"; g.fillText("@shelby.mz", 30, h - 150);
+          g.font = "27px Geist, sans-serif"; g.fillText("Edit Free Fire MZ 🔥", 30, h - 106);
+          g.font = "24px Geist, sans-serif"; g.fillText("♫ som original - shelby.mz", 30, h - 62);
+          ot.needsUpdate = true;
+        }
+        draw(); av.addEventListener("load", draw);
+        if (document.fonts) document.fonts.ready.then(draw);
+        scr(0.155, new THREE.MeshBasicMaterial({ map: ot, transparent: true, toneMapped: false }));
+        S.add(ph);
+        /* keyframes: x, y as fractions of the half viewport (up is +), s scale, r* radians, o opacity, sp spin, fl float */
+        var KD = {
+          hero: { x: 0, y: 0.03, s: 1, ry: -0.35, rx: 0, rz: 0.06, o: 1, sp: 0, fl: 1 },
+          criador: { x: 0.62, y: 0, s: 0.82, ry: -0.44, rx: 0.05, rz: 0, o: 1, sp: 0, fl: 0.6 },
+          loja: { x: -0.82, y: 0.04, s: 0.6, ry: 1.9, rx: 0.1, rz: -0.05, o: 1, sp: 1, fl: 0.5 },
+          jogadores: { x: 0.82, y: 0, s: 0.64, ry: -0.1, rx: 0, rz: 0.03, o: 1, sp: 0, fl: 0.6 },
+          comunidade: { x: 0.6, y: 0.08, s: 0.7, ry: -0.3, rx: 0.05, rz: 0.04, o: 1, sp: 0, fl: 1.4 },
+          faq: { x: 0.66, y: 0.02, s: 0.68, ry: -0.24, rx: 0.04, rz: 0.03, o: 1, sp: 0, fl: 1.4 },
+          comprar: { x: 0.7, y: 0.1, s: 0.64, ry: -0.18, rx: 0.03, rz: 0.02, o: 1, sp: 0, fl: 1.2 },
+          end: { x: 0, y: 0, s: 0.78, ry: 0, rx: 0, rz: 0, o: 1, sp: 0, fl: 0.5 }
+        };
+        var KM = {
+          hero: { x: 0, y: 0.28, s: 0.74, ry: -0.35, rx: 0, rz: 0.06, o: 1, sp: 0, fl: 1 },
+          criador: { x: 0.62, y: -0.6, s: 0.34, ry: -0.44, rx: 0.05, rz: 0, o: 0.35, sp: 0, fl: 0.4 },
+          loja: { x: -0.66, y: -0.64, s: 0.3, ry: 1.9, rx: 0.1, rz: -0.05, o: 0.25, sp: 1, fl: 0.3 },
+          jogadores: { x: -0.66, y: -0.64, s: 0.3, ry: 0, rx: 0, rz: 0, o: 0.25, sp: 0, fl: 0.3 },
+          comunidade: { x: -0.66, y: -0.6, s: 0.32, ry: -0.3, rx: 0.05, rz: 0.04, o: 0.3, sp: 0, fl: 0.6 },
+          faq: { x: -0.66, y: -0.6, s: 0.32, ry: -0.24, rx: 0.04, rz: 0.03, o: 0.3, sp: 0, fl: 0.6 },
+          comprar: { x: -0.66, y: -0.6, s: 0.32, ry: -0.18, rx: 0.03, rz: 0.02, o: 0.3, sp: 0, fl: 0.6 },
+          end: { x: 0, y: 0, s: 0.6, ry: 0, rx: 0, rz: 0, o: 1, sp: 0, fl: 0.4 }
+        };
+        var P = ["x", "y", "s", "ry", "rx", "rz", "o", "sp", "fl"];
+        var endEl = document.querySelector(".x-endword");
+        var ids = ["hero", "criador", "loja", "jogadores", "comunidade", "faq", "comprar", "end"];
+        var els = ids.map(function (id) { return id === "end" ? endEl : document.getElementById(id); });
+        var halfH = Math.tan((C.fov / 2) * Math.PI / 180) * C.position.z, halfW = halfH, mob = false, vw = 0, vh = 0;
+        function size() {
+          vw = document.documentElement.clientWidth; vh = innerHeight; mob = vw < 760;
+          R.setSize(vw, vh, false); C.aspect = vw / vh; C.updateProjectionMatrix(); halfW = halfH * C.aspect;
+        }
+        function sm(t) { t = Math.max(0, Math.min(1, t)); return t * t * (3 - 2 * t); }
+        var tgt = {}, cur = null;
+        function target() {
+          var K = mob ? KM : KD, sy = scrollY, maxS = Math.max(1, document.documentElement.scrollHeight - vh), A = [], B = [];
+          els.forEach(function (el, i) {
+            if (!el) { A.push(null); B.push(null); return; }
+            var r = el.getBoundingClientRect(), top = r.top + sy, bot = r.bottom + sy;
+            var a = i === 0 ? -Infinity : Math.min(top - vh * 0.5, maxS - 2);
+            A.push(a); B.push(Math.max(a, bot - vh));
+          });
+          var live = [];
+          ids.forEach(function (id, i) { if (els[i]) live.push(i); });
+          var from = live[0], to = live[0], t = 0;
+          for (var j = 0; j < live.length; j++) {
+            var i = live[j], n = live[j + 1];
+            if (n === undefined || sy <= B[i]) { from = to = i; break; }
+            var b = Math.min(B[i], A[n] - vh * 0.3); if (b < A[i]) b = A[i];
+            if (sy < A[n]) { from = i; to = n; t = sm((sy - b) / Math.max(1, A[n] - b)); if (sy < b) t = 0; break; }
+          }
+          var k1 = K[ids[from]], k2 = K[ids[to]];
+          P.forEach(function (p) { tgt[p] = k1[p] + (k2[p] - k1[p]) * t; });
+          if (ids[to] === "end" || ids[from] === "end") {
+            var r = endEl.getBoundingClientRect(), cy = r.top + r.height * 0.4, ye = 1 - (2 * cy) / vh;
+            var hh = (H * K.end.s) / 2 / halfH; ye = Math.max(-1 + hh, Math.min(1 - hh - 0.12, ye));
+            var w = ids[from] === "end" ? 1 : t; tgt.y = tgt.y * (1 - w) + ye * w;
+          }
+          var lim = Math.max(0, 1 - ((W * tgt.s) / 2 + 0.15) / halfW);
+          tgt.x = Math.max(-lim, Math.min(lim, tgt.x));
+        }
+        var mx = 0, my = 0, tx = 0, ty = 0, t0 = performance.now(), last = t0, spinA = 0, op = -1, chk = 0;
+        addEventListener("pointermove", function (e) { tx = e.clientX / innerWidth - 0.5; ty = e.clientY / innerHeight - 0.5; });
+        addEventListener("deviceorientation", function (e) {
+          if (e.gamma == null) return;
+          tx = Math.max(-0.5, Math.min(0.5, e.gamma / 60)); ty = Math.max(-0.5, Math.min(0.5, (e.beta - 45) / 60));
+        });
+        function loop(t) {
+          requestAnimationFrame(loop);
+          var dt = Math.min(0.1, (t - last) / 1000), k = (t - t0) / 1000; last = t;
+          if (t - chk > 1000) { chk = t; if (hv.paused && hv.readyState > 1) play(hv); }
+          mx += (tx - mx) * 0.06; my += (ty - my) * 0.06;
+          if (rm) {
+            /* reduced motion: the phone stays put in the hero and scrolls away with it */
+            if (scrollY > hero.offsetHeight + vh) return;
+            cur = {}; P.forEach(function (p) { cur[p] = (mob ? KM : KD).hero[p]; });
+            cur.y += (scrollY / vh) * 2;
+          } else {
+            target();
+            if (!cur) { cur = {}; P.forEach(function (p) { cur[p] = tgt[p]; }); }
+            var a = 1 - Math.pow(0.92, dt * 60);
+            P.forEach(function (p) { cur[p] += (tgt[p] - cur[p]) * a; });
+            if (cur.sp > 0.05) spinA += dt * 0.55 * cur.sp;
+            else spinA += (Math.round(spinA / (2 * Math.PI)) * 2 * Math.PI - spinA) * a;
+          }
+          var f = rm ? 0 : cur.fl;
+          ph.scale.setScalar(cur.s);
+          ph.position.x = cur.x * halfW;
+          ph.position.y = cur.y * halfH + f * Math.sin(k * 0.9) * 0.06;
+          ph.rotation.y = cur.ry + spinA + mx * 0.7 + f * Math.sin(k * 0.6) * 0.08;
+          ph.rotation.x = cur.rx + my * 0.45;
+          ph.rotation.z = cur.rz - mx * 0.06;
+          if (Math.abs(cur.o - op) > 0.005) { op = cur.o; cv.style.opacity = op.toFixed(3); }
+          R.render(S, C);
+        }
+        size(); addEventListener("resize", size); requestAnimationFrame(loop);
+      })();
+    </script>
+  </body>
 </html>
-<script>
-(() => {
-  const hide = selector => document.querySelectorAll(selector).forEach(node => { node.hidden = true; node.setAttribute('aria-hidden', 'true'); });
-  hide('#planos, #loja, #auth-dialog, #checkout-dialog, #selected-player-plan');
-  document.querySelectorAll('.nav-links a[href="#planos"], .nav-links a[href="#loja"], #account-button').forEach(node => node.remove());
-  const form = document.querySelector('#sensi-form');
-  if (!form) return;
-  const cleanForm = form.cloneNode(true);
-  form.replaceWith(cleanForm);
-  cleanForm.querySelector('#device')?.closest('.field')?.remove();
-  cleanForm.querySelector('#style')?.closest('.field')?.remove();
-  cleanForm.querySelector('#experience')?.closest('.field')?.remove();
-  const fields = cleanForm.querySelector('.form-grid');
-  fields.insertAdjacentHTML('afterbegin', '<div class="field full"><label for="free-device">Modelo do celular</label><input id="free-device" type="text" autocomplete="off" placeholder="Ex.: Samsung A15, iPhone 13, Redmi Note 12" required></div><div class="field full"><label for="free-dpi">DPI</label><select id="free-dpi"><option value="yes">Gerar com DPI</option><option value="no">Gerar sem DPI</option></select></div>');
-  const model = cleanForm.querySelector('#free-device');
-  const result = document.querySelector('#result');
-  const grid = document.querySelector('#result-grid');
-  function generate() {
-    const name = model.value.trim();
-    if (name.length < 2) return;
-    let seed = [...name.toLowerCase()].reduce((sum, char) => (sum * 31 + char.charCodeAt(0)) >>> 0, 7);
-    const labels = ['Geral', 'Ponto vermelho', 'Mira 2×', 'Mira 4×', 'AWM', 'Olhadinha', 'Botão de tiro'];
-    const values = labels.map(() => { seed = (seed * 1664525 + 1013904223) >>> 0; return 85 + seed % 116; });
-    const items = labels.map((label, i) => [label, values[i]]);
-    items.push(['DPI', 400 + (seed % 601)]);
-    if (cleanForm.querySelector('#free-dpi').value === 'no') items.pop();
-    grid.innerHTML = items.map(item => '<div class="result-cell"><small>' + item[0] + '</small><b>' + item[1] + '</b></div>').join('');
-    result.querySelector('.result-head').innerHTML = 'Sensibilidade para ' + name.replace(/[&<>"']/g, '') + ' <span>GRÁTIS</span>';
-    result.classList.add('show');
-  }
-  cleanForm.addEventListener('submit', event => { event.preventDefault(); generate(); });
-  model.addEventListener('input', generate);
-  cleanForm.querySelector('#free-dpi').addEventListener('change', generate);
-  document.querySelectorAll('.player-card').forEach(card => {
-    card.querySelector('.player-select')?.remove();
-    const button = document.createElement('button'); button.type = 'button'; button.className = 'player-select'; button.textContent = 'Gerar sensi grátis';
-    button.addEventListener('click', () => { model.value = card.querySelector('h3')?.textContent.trim() || ''; generate(); document.querySelector('#gerador')?.scrollIntoView({behavior:'smooth'}); });
-    card.querySelector('.player-info')?.append(button);
-  });
-})();
-</script>
-<script>
-(() => {
-  const submit = document.querySelector('#sensi-form button[type="submit"]');
-  if (submit) { submit.disabled = false; submit.textContent = 'Gerar sensibilidade grátis'; }
-  document.querySelector('#sensi-form .result-note')?.remove();
-  document.querySelectorAll('.faq').forEach(section => section.hidden = true);
-})();
-</script>
